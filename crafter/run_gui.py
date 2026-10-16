@@ -48,9 +48,30 @@ def main():
       pygame.K_5: 'make_stone_sword',
       pygame.K_6: 'make_iron_sword',
   }
-  print('Actions:')
+  action_labels = {
+      'move_left': '向左移动',
+      'move_right': '向右移动',
+      'move_up': '向上移动',
+      'move_down': '向下移动',
+      'do': '与面前一格交互（采集、攻击、喝水等）',
+      'sleep': '睡觉，恢复体力',
+      'place_stone': '放置石块',
+      'place_table': '放置工作台',
+      'place_furnace': '放置熔炉',
+      'place_plant': '种植植物',
+      'make_wood_pickaxe': '制作木镐',
+      'make_stone_pickaxe': '制作石镐',
+      'make_iron_pickaxe': '制作铁镐',
+      'make_wood_sword': '制作木剑',
+      'make_stone_sword': '制作石剑',
+      'make_iron_sword': '制作铁剑',
+  }
+  key_labels = {pygame.K_SPACE: '空格', pygame.K_TAB: 'Tab'}
+  print('操作按键：')
   for key, action in keymap.items():
-    print(f'  {pygame.key.name(key)}: {action}')
+    key_label = key_labels.get(key, pygame.key.name(key).upper())
+    print(f'  {key_label}：{action_labels[action]}')
+  print('  Esc：退出游戏')
 
   crafter.constants.items['health']['max'] = args.health
   crafter.constants.items['health']['initial'] = args.health
@@ -70,7 +91,11 @@ def main():
   print('Diamonds exist:', env._world.count('diamond'))
 
   pygame.init()
+  pygame.display.set_caption('Crafter | WASD: Move | Space: Interact | Esc: Quit')
   screen = pygame.display.set_mode(args.window)
+  # SDL starts text input by default. A Chinese IME can consume WASD as
+  # composition text instead of delivering KEYDOWN events to the game.
+  pygame.key.stop_text_input()
   clock = pygame.time.Clock()
   running = True
   while running:
@@ -92,10 +117,14 @@ def main():
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
         running = False
+      elif event.type == pygame.WINDOWFOCUSGAINED:
+        pygame.key.stop_text_input()
       elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
         running = False
       elif event.type == pygame.KEYDOWN and event.key in keymap.keys():
         action = keymap[event.key]
+    if not running:
+      break
     if action is None:
       pressed = pygame.key.get_pressed()
       for key, action in keymap.items():

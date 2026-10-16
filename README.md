@@ -1,173 +1,141 @@
-**Status:** Stable release
+# Crafter：本地人玩版
 
-[![PyPI](https://img.shields.io/pypi/v/crafter.svg)](https://pypi.python.org/pypi/crafter/#history)
+Crafter 是一个用于强化学习研究的二维开放世界生存游戏，也可以直接用键盘游玩。你需要在随机生成的世界里采集资源、寻找食物和水、睡觉恢复体力、制作工具，并抵御怪物。目标是在每局中尽可能解锁更多成就，没有必须完成的单一通关任务。
 
-# Crafter
+本项目基于 [Danijar Hafner 的官方 Crafter](https://github.com/danijar/crafter)，保留官方游戏规则，增加 Windows 一键启动入口。英文原文见 [README.en.md](README.en.md)。
 
-Open world survival game for evaluating a wide range of agent abilities within
-a single environment.
+![Crafter 地形示例](media/terrain.png)
 
-![Crafter Terrain](https://github.com/danijar/crafter/raw/main/media/terrain.png)
+## 一键启动（Windows）
 
-## Overview
+**双击根目录的 `play.bat`。** 本机环境准备好后，会打开一个 720 × 720 的游戏窗口。先点击游戏窗口获得键盘焦点，再开始操作。
 
-Crafter features randomly generated 2D worlds where the player needs to forage
-for food and water, find shelter to sleep, defend against monsters, collect
-materials, and build tools. Crafter aims to be a fruitful benchmark for
-reinforcement learning by focusing on the following design goals:
+**新手推荐双击 `play_beginner.bat`。** 它自动以 `--wait True` 启动，不按键时世界暂停，可以慢慢熟悉操作；睡觉期间世界仍会推进。也可以在 PowerShell 中运行 `.\play_beginner.bat`。
 
-- **Research challenges:** Crafter poses substantial challenges to current
-  methods, evaluating strong generalization, wide and deep exploration,
-  representation learning, and long-term reasoning and credit assignment.
+首次启动会自动创建项目专用的 `.venv` 并安装依赖，需要联网；后续启动复用环境，不再重复安装。游戏本身在本地运行，不需要账号、服务器或 GPU。不需要手动激活虚拟环境，也不会修改其他项目的 Python 环境。
 
-- **Meaningful evaluation:** Agents are evaluated by semantically meaningful
-  achievements that can be unlocked in each episode, offering insights into the
-  ability spectrum of both reward agents and unsupervised agents.
+新机器需要先安装以下任意一种工具：
 
-- **Iteration speed:** Crafter evaluates many agent abilities within a single
-  env, vastly reducing the computational requirements over benchmarks suites
-  that require training on many separate envs from scratch.
+- **[uv](https://docs.astral.sh/uv/getting-started/installation/)**：启动脚本会通过 uv 自动准备 Python 3.11。
+- **[Python 3.11](https://www.python.org/downloads/)**：安装时勾选 “Add python.exe to PATH”。也支持 Python 3.10 / 3.12。
 
-See the research paper to find out more: [Benchmarking the Spectrum of Agent
-Capabilities](https://arxiv.org/pdf/2109.06780.pdf)
+脚本使用固定的游戏依赖版本，采用 Python 3.10–3.12；如果只有 Python 3.13 / 3.14，请安装 uv 或上述 Python 版本。
 
-```
-@article{hafner2021crafter,
-  title={Benchmarking the Spectrum of Agent Capabilities},
-  author={Danijar Hafner},
-  year={2021},
-  journal={arXiv preprint arXiv:2109.06780},
-}
+在 PowerShell 中也可以运行：
+
+```powershell
+.\play.bat
 ```
 
-## Play Yourself
+默认每秒推进 5 个游戏步，**不按键时世界也会继续运行**，食物、水分和体力会消耗。死亡后自动开始新一局；按 `Esc` 或关闭游戏窗口退出。
+
+## 操作按键
+
+| 按键 | 功能 |
+| --- | --- |
+| `W / A / S / D` | 上 / 左 / 下 / 右移动，同时改变朝向 |
+| `Space`（空格） | 与面前一格交互：砍树、挖矿、喝水、攻击或吃成熟作物 |
+| `Tab` | 睡觉，直到体力恢复；受到伤害会醒来 |
+| `T` | 在面前放置工作台，消耗 2 木材 |
+| `R` | 在面前放置石块，消耗 1 石头，可用于搭桥 |
+| `F` | 在面前放置熔炉，消耗 4 石头 |
+| `P` | 在面前的草地种植，消耗 1 树苗 |
+| `1 / 2 / 3` | 制作木镐 / 石镐 / 铁镐 |
+| `4 / 5 / 6` | 制作木剑 / 石剑 / 铁剑 |
+| `Esc` | 退出游戏 |
+
+长按可以重复移动或交互。采集、攻击、放置都作用于**角色朝向的一格**；先按方向键面对目标，再按空格。工具放在背包里便会自动使用，无需切换装备。
+
+窗口下方用图标和数字显示生命、食物、水分、体力以及资源和工具数量。解锁成就和本局结束信息会显示在启动时的控制台中。
+
+## 新手路线
+
+1. 找到树，面对树按空格收集木材。至少准备 3 木材：2 个用于工作台，1 个用于木镐。
+2. 面对空地按 `T` 放工作台，站在它附近按 `1` 制作木镐。
+3. 有木镐后可以采集石头和煤。采集石头，再在工作台附近按 `2` 制作石镐。
+4. 有石镐后采集铁；收集煤、铁、木材，并用 4 石头放置熔炉。
+5. 在工作台和熔炉附近按 `3` 制作铁镐，再探索矿区寻找钻石。
+6. 途中持续补给：面对水按空格喝水；攻击牛获得食物；在草地按空格有概率获得树苗，种植后等待成熟再吃；找安全地点按 `Tab` 睡觉。
+
+工具制作配方如下。工作台或熔炉需要在角色周围一格范围内，材料不足或距离太远时按键不会制作。
+
+| 工具 | 消耗材料 | 附近设施 |
+| --- | --- | --- |
+| 木镐 / 木剑 | 1 木材 | 工作台 |
+| 石镐 / 石剑 | 1 木材 + 1 石头 | 工作台 |
+| 铁镐 / 铁剑 | 1 木材 + 1 煤 + 1 铁 | 工作台与熔炉 |
+
+夜间留意僵尸，矿区留意骷髅。饥饿、缺水或体力不足会损失生命，走入岩浆会死亡。背包物品通常最多保留 9 个。
+
+## 可选启动参数
+
+参数会传给官方的 `crafter.run_gui`。例如：
+
+```powershell
+# 固定初始随机种子
+.\play.bat --seed 42
+
+# 不按键时暂停世界，适合慢慢熟悉玩法；睡觉期间仍会推进
+.\play.bat --wait True
+
+# 修改窗口大小或游戏速度
+.\play.bat --window 900 900 --fps 5
+
+# 死亡后退出，不自动开新局
+.\play.bat --death quit
+
+# 仅准备环境，不打开窗口
+.\play.bat -SetupOnly
+
+# 查看全部官方参数
+.\play.bat --help
+```
+
+`--seed` 固定的是初始种子；同一次运行中死亡重开会使用下一局的地图。`--wait True` 会改变时间推进方式，因此与默认实时玩法不同。
+
+## 常见问题
+
+- **提示找不到 Python：** 安装 uv，或安装 Python 3.11 并加入 PATH，然后重新双击。安装工具后如在旧终端运行，请重新打开终端。
+- **第一次启动较慢：** 正在下载 Python 或依赖；地图首次生成也可能需要等待片刻。
+- **依赖安装失败：** 检查网络后重试；脚本只在安装成功后记录环境已就绪。
+- **环境损坏或移动文件夹后无法启动：** 关闭游戏，删除本项目的 `.venv` 文件夹，再双击重建。不要删除其他项目的环境。
+- **按键没有反应：** 点击游戏窗口获得焦点。游戏会自动关闭窗口的文字输入模式，避免中文输入法把 `WASD` 当作拼音拦截；更新代码后请关闭旧窗口，重新运行 `play.bat`。制作还需要满足材料和附近设施条件。
+- **双击后出现错误：** 控制台会保留错误并等待按键，便于查看；可以从 PowerShell 运行 `play.bat` 检查输出。
+
+## 手动运行与研究接口
+
+已经通过脚本安装依赖后，可以直接使用项目环境：
+
+```powershell
+.\.venv\Scripts\python.exe -m crafter.run_gui
+```
+
+Linux / macOS 可以在 Python 3.10–3.12 环境中手动运行：
 
 ```sh
-python3 -m pip install crafter  # Install Crafter
-python3 -m pip install pygame   # Needed for human interface
-python3 -m crafter.run_gui      # Start the game
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-play.txt
+python -m crafter.run_gui
 ```
 
-<details>
-<summary>Keyboard mapping (click to expand)</summary>
+研究接口也保留在 `crafter` 包中；默认观察为 64 × 64 RGB 图像，有 17 个离散动作、22 项成就。可直接使用环境，无需安装 Gym：
 
-| Key | Action |
-| :-: | :----- |
-| WASD | Move around |
-| SPACE| Collect material, drink from lake, hit creature |
-| TAB | Sleep |
-| T | Place a table |
-| R | Place a rock |
-| F | Place a furnace |
-| P | Place a plant |
-| 1 | Craft a wood pickaxe |
-| 2 | Craft a stone pickaxe |
-| 3 | Craft an iron pickaxe |
-| 4 | Craft a wood sword |
-| 5 | Craft a stone sword |
-| 6 | Craft an iron sword |
-
-</details>
-
-![Crafter Video](https://github.com/danijar/crafter/raw/main/media/video.gif)
-
-## Interface
-
-To install Crafter, run `pip3 install crafter`. The environment follows the
-[OpenAI Gym][gym] interface. Observations are images of size (64, 64, 3) and
-outputs are one of 17 categorical actions.
-
-```py
-import gym
+```python
 import crafter
 
-env = gym.make('CrafterReward-v1')  # Or CrafterNoReward-v1
-env = crafter.Recorder(
-  env, './path/to/logdir',
-  save_stats=True,
-  save_video=False,
-  save_episode=False,
-)
-
+env = crafter.Env(seed=42)
 obs = env.reset()
-done = False
-while not done:
-  action = env.action_space.sample()
-  obs, reward, done, info = env.step(action)
+obs, reward, done, info = env.step(env.action_names.index("move_right"))
+print(info["inventory"], info["achievements"])
 ```
 
-[gym]: https://github.com/openai/gym
+当前接口返回 `reset() -> obs`、`step() -> (obs, reward, done, info)`，接入使用新接口的 Gymnasium 算法时需要适配。
 
-## Evaluation
+## 来源与许可证
 
-Agents are allowed a budget of 1M environmnent steps and are evaluated by their
-success rates of the 22 achievements and by their geometric mean score. Example
-scripts for computing these are included in the `analysis` directory of the
-repository.
+- 官方源码：[danijar/crafter](https://github.com/danijar/crafter)
+- 论文：[Benchmarking the Spectrum of Agent Capabilities](https://arxiv.org/abs/2109.06780)
+- 许可证：[MIT](LICENSE)
 
-- **Reward:** The sparse reward is `+1` for unlocking an achievement during
-  the episode and `-0.1` or `+0.1` for lost or regenerated health points.
-  Results should be reported not as reward but as success rates and score.
-
-- **Success rates:** The success rates of the 22 achievemnts are computed
-  as the percentage across all training episodes in which the achievement was
-  unlocked, allowing insights into the ability spectrum of an agent.
-
-- **Crafter score:** The score is the geometric mean of success rates, so that
-  improvements on difficult achievements contribute more than improvements on
-  achievements with already high success rates.
-
-## Scoreboards
-
-Please create a pull request if you would like to add your or another algorithm
-to the scoreboards. For the reinforcement learning and unsupervised agents
-categories, the interaction budget is 1M. The external knowledge category is
-defined more broadly.
-
-### Reinforcement Learning
-
-| Algorithm | Score (%) | Reward | Open Source |
-|:----------|----------:|-------:|:-----------:|
-| [Curious Replay](https://arxiv.org/pdf/2306.15934.pdf) | 19.4±1.6 | - | [AutonomousAgentsLab/cr-dv3](https://github.com/AutonomousAgentsLab/cr-dv3) |
-| [PPO (ResNet)](https://arxiv.org/pdf/2307.03486.pdf)| 15.6±1.6 | 10.3±0.5 | [snu-mllab/Achievement-Distillation](https://github.com/snu-mllab/Achievement-Distillation) 
-| [DreamerV3](https://arxiv.org/pdf/2301.04104v1.pdf) | 14.5±1.6 | 11.7±1.9 | [danijar/dreamerv3](https://github.com/danijar/dreamerv3) |
-| [LSTM-SPCNN](https://arxiv.org/pdf/2208.03374.pdf) | 12.1±0.8 | — | [astanic/crafter-ood](https://github.com/astanic/crafter-ood) |
-| [EDE](https://openreview.net/pdf?id=GZDsKahGY-2) | 11.7±1.0 | — | [yidingjiang/ede](https://github.com/yidingjiang/ede) |
-| [OC-SA](https://arxiv.org/pdf/2208.03374.pdf) | 11.1±0.7 | — | [astanic/crafter-ood](https://github.com/astanic/crafter-ood) |
-| [DreamerV2](https://arxiv.org/pdf/2010.02193.pdf) | 10.0±1.2 | 9.0±1.7 | [danijar/dreamerv2](https://github.com/danijar/dreamerv2) |
-| [PPO](https://arxiv.org/pdf/1710.02298.pdf) | 4.6±0.3 | 4.2±1.2 | [DLR-RM/stable-baselines3](https://github.com/DLR-RM/stable-baselines3) |
-| [Rainbow](https://arxiv.org/pdf/1710.02298.pdf) | 4.3±0.2 | 6.0±1.3 | [Kaixhin/Rainbow](https://github.com/Kaixhin/Rainbow) |
-
-### Unsupervised Agents
-
-| Algorithm | Score (%) | Reward | Open Source |
-|:----------|----------:|-------:|:-----------:|
-| [Plan2Explore](https://arxiv.org/pdf/2010.02193.pdf) | 2.1±0.1 | 2.1±1.5 | [danijar/dreamerv2](https://github.com/danijar/dreamerv2) |
-| [RND](https://arxiv.org/pdf/1810.12894.pdf) | 2.0±0.1 | 0.7±1.3 | [alirezakazemipour/PPO-RND](https://github.com/alirezakazemipour/PPO-RND) |
-| Random | 1.6±0.0 | 2.1±1.3 | — |
-
-### External Knowledge
-
-| Algorithm | Score (%) | Reward | Uses | Interaction | Open Source |
-|:----------|----------:|-------:|:-----|:-----------:|:-----------:|
-| [Human](https://en.wikipedia.org/wiki/Human) | 50.5±6.8 | 14.3±2.3 | Life experience | 0 | [crafter_human_dataset](https://archive.org/details/crafter_human_dataset) |
-| [SPRING](https://arxiv.org/pdf/2305.15486.pdf) | 27.3±1.2 | 12.3±0.7 | LLM, scene description, Crafter paper | 0 | ❌ |
-| [Achievement Distillation](https://arxiv.org/pdf/2307.03486.pdf) | 21.8±1.4 | 12.6±0.3 | Reward structure | 1M | [snu-mllab/Achievement-Distillation](https://github.com/snu-mllab/Achievement-Distillation) |
-| [ELLM](https://arxiv.org/pdf/2302.06692.pdf) | — | 6.0±0.4 | LLM, scene description | 5M | ❌ |
-
-## Baselines
-
-Baseline scores of various agents are available for Crafter, both with and
-without rewards. The scores are available in JSON format in the `scores`
-directory of the repository. For comparison, the score of human expert players
-is 50.5\%. The [baseline
-implementations](https://github.com/danijar/crafter-baselines) are available as
-a separate repository.
-
-<img src="https://github.com/danijar/crafter/raw/main/media/scores.png" width="400"/>
-
-## Questions
-
-Please [open an issue][issues] on Github.
-
-[issues]: https://github.com/danijar/crafter/issues
+本地新增入口为 `play.bat`、`play_beginner.bat`、`scripts/play.ps1` 和 `requirements-play.txt`；游戏窗口增加了标题操作提示，并关闭文字输入模式以避免中文输入法拦截游戏按键。

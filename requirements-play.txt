@@ -1,0 +1,7 @@
+# Human-play environment: Python 3.10-3.12. Gym is optional and not needed here.
+numpy==1.26.4
+imageio==2.37.0
+pillow==11.3.0
+opensimplex==0.4.5.1
+ruamel.yaml==0.18.15
+pygame==2.6.1
