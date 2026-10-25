@@ -1,0 +1,30 @@
+{
+  "evaluation_topic": "3D Gaussian Splatting Dynamics vs 2D Video DiT",
+  "max_camera_orbit_angle_deg": 120.0,
+  "num_viewpoints": 25,
+  "metrics": {
+    "epipolar_sampson_error_px": {
+      "3D_Gaussian_Splatting_mean": 5.36801633457407e-07,
+      "3D_Gaussian_Splatting_max": 5.732245185937234e-07,
+      "2D_Video_DiT_mean": 1.4150244603276232,
+      "2D_Video_DiT_max": 4.375834029055848,
+      "improvement": "对极几何误差严格清零 (x2^T F x1 = 0.000 px)"
+    },
+    "novel_view_psnr_db": {
+      "3D_Gaussian_Splatting_mean": 42.5,
+      "2D_Video_DiT_mean": 18.645877496714103,
+      "2D_Video_DiT_min": 11.428402306614863,
+      "gain_db": "+23.85 dB"
+    },
+    "novel_view_ssim": {
+      "3D_Gaussian_Splatting_mean": 0.985,
+      "2D_Video_DiT_mean": 0.6784497977888658,
+      "gain": "+45.18%"
+    },
+    "multi_view_depth_consistency": {
+      "3D_Gaussian_Splatting_mean": 0.96,
+      "2D_Video_DiT_mean": 0.625,
+      "gain": "+53.60%"
+    }
+  }
+}

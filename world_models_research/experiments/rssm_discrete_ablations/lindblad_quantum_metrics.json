@@ -1,0 +1,36 @@
+{
+  "benchmark_steps": 600,
+  "hilbert_space_dimension": 4,
+  "trace_preservation_residual": {
+    "unitary_model": 0.0,
+    "classical_markov_model": 1.2212453270876722e-17,
+    "odq_wm": 2.312964634635743e-17
+  },
+  "hermiticity_residual": {
+    "odq_wm": 0.0
+  },
+  "complete_positivity_min_eigenvalue": 0.0,
+  "final_quantum_purity": {
+    "ground_truth": 0.37812561686596313,
+    "unitary_model": 1.0,
+    "classical_markov_model": 0.3334749480383833,
+    "odq_wm": 0.37812561686596313
+  },
+  "thermal_purity_lower_bound_1_over_d": 0.25,
+  "final_quantum_fidelity": {
+    "unitary_model": 0.46115720412207645,
+    "classical_markov_model": 0.9622547067854499,
+    "odq_wm": 0.9999999999999996
+  },
+  "mean_quantum_fidelity": {
+    "unitary_model": 0.6881657573158438,
+    "classical_markov_model": 0.8545161462509819,
+    "odq_wm": 0.9999999999999998
+  },
+  "quantum_coherence_off_diagonal_final": {
+    "ground_truth": 0.29244298223701837,
+    "classical_markov_model": 0.0,
+    "odq_wm": 0.29244298223701837
+  },
+  "theorem_52_verified": true
+}

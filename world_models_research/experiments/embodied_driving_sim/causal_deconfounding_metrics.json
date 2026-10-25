@@ -1,0 +1,1444 @@
+{
+  "meta": {
+    "experiment": "Autonomous Driving Causal Deconfounding & Structural Causal World Model Benchmark",
+    "theory": "Judea Pearl SCM, Backdoor Adjustment, Latent Invariant Representation Learning",
+    "num_scenarios": 6,
+    "timestamp": "2026-10-23T06:15:00Z"
+  },
+  "scenarios": {
+    "SC_01_Billboard_Red_Circle": {
+      "name": "Roadside Billboard Red Circle (Spurious Red Light)",
+      "confounder_feature": "Visual Red Circular Feature in Upper Field",
+      "true_physical_hazard": false,
+      "vanilla_e2e": {
+        "phantom_brake_incident": true,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": 23.21,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 0.0,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 16.67,
+            "dist": 44.17,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 15.37,
+            "dist": 40.99,
+            "accel": -6.5
+          },
+          {
+            "t": 0.4,
+            "v": 14.07,
+            "dist": 38.08,
+            "accel": -6.5
+          },
+          {
+            "t": 0.6,
+            "v": 12.77,
+            "dist": 35.43,
+            "accel": -6.5
+          },
+          {
+            "t": 0.8,
+            "v": 11.47,
+            "dist": 33.04,
+            "accel": -6.5
+          },
+          {
+            "t": 1.0,
+            "v": 10.17,
+            "dist": 30.91,
+            "accel": -6.5
+          },
+          {
+            "t": 1.2,
+            "v": 8.87,
+            "dist": 29.04,
+            "accel": -6.5
+          },
+          {
+            "t": 1.4,
+            "v": 7.57,
+            "dist": 27.43,
+            "accel": -6.5
+          },
+          {
+            "t": 1.6,
+            "v": 6.27,
+            "dist": 26.07,
+            "accel": -6.5
+          },
+          {
+            "t": 1.8,
+            "v": 4.97,
+            "dist": 24.98,
+            "accel": -6.5
+          },
+          {
+            "t": 2.0,
+            "v": 3.67,
+            "dist": 24.15,
+            "accel": -6.5
+          },
+          {
+            "t": 2.2,
+            "v": 2.37,
+            "dist": 23.58,
+            "accel": -6.5
+          },
+          {
+            "t": 2.4,
+            "v": 1.07,
+            "dist": 23.27,
+            "accel": -6.5
+          },
+          {
+            "t": 2.6,
+            "v": 0.0,
+            "dist": 23.21,
+            "accel": -6.5
+          },
+          {
+            "t": 2.8,
+            "v": 0.0,
+            "dist": 23.21,
+            "accel": -6.5
+          },
+          {
+            "t": 3.0,
+            "v": 0.0,
+            "dist": 23.21,
+            "accel": -6.5
+          },
+          {
+            "t": 3.2,
+            "v": 0.0,
+            "dist": 23.21,
+            "accel": -6.5
+          },
+          {
+            "t": 3.4,
+            "v": 0.0,
+            "dist": 23.21,
+            "accel": -6.5
+          }
+        ]
+      },
+      "causal_deconfounded": {
+        "phantom_brake_incident": false,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -13.35,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 16.67,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 16.67,
+            "dist": 44.17,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 16.67,
+            "dist": 40.83,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 16.67,
+            "dist": 37.5,
+            "accel": 0.0
+          },
+          {
+            "t": 0.6,
+            "v": 16.67,
+            "dist": 34.16,
+            "accel": 0.0
+          },
+          {
+            "t": 0.8,
+            "v": 16.67,
+            "dist": 30.83,
+            "accel": 0.0
+          },
+          {
+            "t": 1.0,
+            "v": 16.67,
+            "dist": 27.5,
+            "accel": 0.0
+          },
+          {
+            "t": 1.2,
+            "v": 16.67,
+            "dist": 24.16,
+            "accel": 0.0
+          },
+          {
+            "t": 1.4,
+            "v": 16.67,
+            "dist": 20.83,
+            "accel": 0.0
+          },
+          {
+            "t": 1.6,
+            "v": 16.67,
+            "dist": 17.49,
+            "accel": 0.0
+          },
+          {
+            "t": 1.8,
+            "v": 16.67,
+            "dist": 14.16,
+            "accel": 0.0
+          },
+          {
+            "t": 2.0,
+            "v": 16.67,
+            "dist": 10.83,
+            "accel": 0.0
+          },
+          {
+            "t": 2.2,
+            "v": 16.67,
+            "dist": 7.49,
+            "accel": 0.0
+          },
+          {
+            "t": 2.4,
+            "v": 16.67,
+            "dist": 4.16,
+            "accel": 0.0
+          },
+          {
+            "t": 2.6,
+            "v": 16.67,
+            "dist": 0.82,
+            "accel": 0.0
+          },
+          {
+            "t": 2.8,
+            "v": 16.67,
+            "dist": -2.51,
+            "accel": 0.0
+          },
+          {
+            "t": 3.0,
+            "v": 16.67,
+            "dist": -5.84,
+            "accel": 0.0
+          },
+          {
+            "t": 3.2,
+            "v": 16.67,
+            "dist": -9.18,
+            "accel": 0.0
+          },
+          {
+            "t": 3.4,
+            "v": 16.67,
+            "dist": -12.51,
+            "accel": 0.0
+          }
+        ]
+      }
+    },
+    "SC_02_Rain_Puddle_Sky_Reflection": {
+      "name": "Asphalt Rain Puddle Sky Reflection (Spurious Trench Void)",
+      "confounder_feature": "Localized Negative Disparity / Optical Void Feature",
+      "true_physical_hazard": false,
+      "vanilla_e2e": {
+        "phantom_brake_incident": false,
+        "ghost_swerve_incident": true,
+        "min_clearance_m": -6.83,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 15.94,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 19.44,
+            "dist": 54.03,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 19.44,
+            "dist": 50.14,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 19.44,
+            "dist": 46.25,
+            "accel": 0.0
+          },
+          {
+            "t": 0.6,
+            "v": 19.44,
+            "dist": 42.36,
+            "accel": 0.0
+          },
+          {
+            "t": 0.8,
+            "v": 19.44,
+            "dist": 38.48,
+            "accel": 0.0
+          },
+          {
+            "t": 1.0,
+            "v": 19.44,
+            "dist": 34.59,
+            "accel": 0.0
+          },
+          {
+            "t": 1.2,
+            "v": 18.94,
+            "dist": 30.76,
+            "accel": -2.5
+          },
+          {
+            "t": 1.4,
+            "v": 18.44,
+            "dist": 27.04,
+            "accel": -2.5
+          },
+          {
+            "t": 1.6,
+            "v": 17.94,
+            "dist": 23.41,
+            "accel": -2.5
+          },
+          {
+            "t": 1.8,
+            "v": 17.44,
+            "dist": 19.89,
+            "accel": -2.5
+          },
+          {
+            "t": 2.0,
+            "v": 16.94,
+            "dist": 16.46,
+            "accel": -2.5
+          },
+          {
+            "t": 2.2,
+            "v": 16.44,
+            "dist": 13.13,
+            "accel": -2.5
+          },
+          {
+            "t": 2.4,
+            "v": 15.94,
+            "dist": 9.91,
+            "accel": -2.5
+          },
+          {
+            "t": 2.6,
+            "v": 15.94,
+            "dist": 6.72,
+            "accel": 0.0
+          },
+          {
+            "t": 2.8,
+            "v": 15.94,
+            "dist": 3.53,
+            "accel": 0.0
+          },
+          {
+            "t": 3.0,
+            "v": 15.94,
+            "dist": 0.35,
+            "accel": 0.0
+          },
+          {
+            "t": 3.2,
+            "v": 15.94,
+            "dist": -2.84,
+            "accel": 0.0
+          },
+          {
+            "t": 3.4,
+            "v": 15.94,
+            "dist": -6.03,
+            "accel": 0.0
+          }
+        ]
+      },
+      "causal_deconfounded": {
+        "phantom_brake_incident": false,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -13.04,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 19.44,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 19.44,
+            "dist": 54.03,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 19.44,
+            "dist": 50.14,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 19.44,
+            "dist": 46.25,
+            "accel": 0.0
+          },
+          {
+            "t": 0.6,
+            "v": 19.44,
+            "dist": 42.36,
+            "accel": 0.0
+          },
+          {
+            "t": 0.8,
+            "v": 19.44,
+            "dist": 38.48,
+            "accel": 0.0
+          },
+          {
+            "t": 1.0,
+            "v": 19.44,
+            "dist": 34.59,
+            "accel": 0.0
+          },
+          {
+            "t": 1.2,
+            "v": 19.44,
+            "dist": 30.7,
+            "accel": 0.0
+          },
+          {
+            "t": 1.4,
+            "v": 19.44,
+            "dist": 26.81,
+            "accel": 0.0
+          },
+          {
+            "t": 1.6,
+            "v": 19.44,
+            "dist": 22.92,
+            "accel": 0.0
+          },
+          {
+            "t": 1.8,
+            "v": 19.44,
+            "dist": 19.04,
+            "accel": 0.0
+          },
+          {
+            "t": 2.0,
+            "v": 19.44,
+            "dist": 15.15,
+            "accel": 0.0
+          },
+          {
+            "t": 2.2,
+            "v": 19.44,
+            "dist": 11.26,
+            "accel": 0.0
+          },
+          {
+            "t": 2.4,
+            "v": 19.44,
+            "dist": 7.37,
+            "accel": 0.0
+          },
+          {
+            "t": 2.6,
+            "v": 19.44,
+            "dist": 3.48,
+            "accel": 0.0
+          },
+          {
+            "t": 2.8,
+            "v": 19.44,
+            "dist": -0.4,
+            "accel": 0.0
+          },
+          {
+            "t": 3.0,
+            "v": 19.44,
+            "dist": -4.29,
+            "accel": 0.0
+          },
+          {
+            "t": 3.2,
+            "v": 19.44,
+            "dist": -8.18,
+            "accel": 0.0
+          },
+          {
+            "t": 3.4,
+            "v": 19.44,
+            "dist": -12.07,
+            "accel": 0.0
+          }
+        ]
+      }
+    },
+    "SC_03_Broken_Brake_Light_Truck": {
+      "name": "Preceding Truck Sudden Deceleration with Broken Brake Lights",
+      "confounder_feature": "Absence of Red Illumination Optical Cue (Causal Inversion)",
+      "true_physical_hazard": true,
+      "vanilla_e2e": {
+        "phantom_brake_incident": false,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -11.79,
+        "collision_probability": 1.0,
+        "final_velocity_mps": 9.25,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 24.98,
+            "dist": 58.75,
+            "accel": -0.5
+          },
+          {
+            "t": 0.2,
+            "v": 24.88,
+            "dist": 53.77,
+            "accel": -0.5
+          },
+          {
+            "t": 0.4,
+            "v": 24.78,
+            "dist": 48.81,
+            "accel": -0.5
+          },
+          {
+            "t": 0.6,
+            "v": 24.68,
+            "dist": 43.86,
+            "accel": -0.5
+          },
+          {
+            "t": 0.8,
+            "v": 24.58,
+            "dist": 38.94,
+            "accel": -0.5
+          },
+          {
+            "t": 1.0,
+            "v": 24.48,
+            "dist": 34.04,
+            "accel": -0.5
+          },
+          {
+            "t": 1.2,
+            "v": 24.38,
+            "dist": 29.16,
+            "accel": -0.5
+          },
+          {
+            "t": 1.4,
+            "v": 24.28,
+            "dist": 24.29,
+            "accel": -0.5
+          },
+          {
+            "t": 1.6,
+            "v": 24.18,
+            "dist": 19.45,
+            "accel": -0.5
+          },
+          {
+            "t": 1.8,
+            "v": 23.28,
+            "dist": 14.69,
+            "accel": -8.5
+          },
+          {
+            "t": 2.0,
+            "v": 21.58,
+            "dist": 10.25,
+            "accel": -8.5
+          },
+          {
+            "t": 2.2,
+            "v": 19.88,
+            "dist": 6.14,
+            "accel": -8.5
+          },
+          {
+            "t": 2.4,
+            "v": 18.18,
+            "dist": 2.38,
+            "accel": -8.5
+          },
+          {
+            "t": 2.6,
+            "v": 16.48,
+            "dist": -1.04,
+            "accel": -8.5
+          },
+          {
+            "t": 2.8,
+            "v": 14.78,
+            "dist": -4.12,
+            "accel": -8.5
+          },
+          {
+            "t": 3.0,
+            "v": 13.08,
+            "dist": -6.87,
+            "accel": -8.5
+          },
+          {
+            "t": 3.2,
+            "v": 11.38,
+            "dist": -9.27,
+            "accel": -8.5
+          },
+          {
+            "t": 3.4,
+            "v": 9.68,
+            "dist": -11.33,
+            "accel": -8.5
+          }
+        ]
+      },
+      "causal_deconfounded": {
+        "phantom_brake_incident": false,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -11.97,
+        "collision_probability": 1.0,
+        "final_velocity_mps": 13.81,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 25.0,
+            "dist": 58.75,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 25.0,
+            "dist": 53.75,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 25.0,
+            "dist": 48.75,
+            "accel": 0.0
+          },
+          {
+            "t": 0.6,
+            "v": 24.86,
+            "dist": 43.76,
+            "accel": -2.86
+          },
+          {
+            "t": 0.8,
+            "v": 24.25,
+            "dist": 38.86,
+            "accel": -3.11
+          },
+          {
+            "t": 1.0,
+            "v": 23.61,
+            "dist": 34.09,
+            "accel": -3.32
+          },
+          {
+            "t": 1.2,
+            "v": 22.92,
+            "dist": 29.45,
+            "accel": -3.5
+          },
+          {
+            "t": 1.4,
+            "v": 22.2,
+            "dist": 24.96,
+            "accel": -3.65
+          },
+          {
+            "t": 1.6,
+            "v": 21.46,
+            "dist": 20.61,
+            "accel": -3.78
+          },
+          {
+            "t": 1.8,
+            "v": 20.69,
+            "dist": 16.42,
+            "accel": -3.88
+          },
+          {
+            "t": 2.0,
+            "v": 19.9,
+            "dist": 12.38,
+            "accel": -3.98
+          },
+          {
+            "t": 2.2,
+            "v": 19.09,
+            "dist": 8.5,
+            "accel": -4.06
+          },
+          {
+            "t": 2.4,
+            "v": 18.27,
+            "dist": 4.78,
+            "accel": -4.12
+          },
+          {
+            "t": 2.6,
+            "v": 17.44,
+            "dist": 1.23,
+            "accel": -4.18
+          },
+          {
+            "t": 2.8,
+            "v": 16.6,
+            "dist": -2.15,
+            "accel": -4.23
+          },
+          {
+            "t": 3.0,
+            "v": 15.75,
+            "dist": -5.36,
+            "accel": -4.27
+          },
+          {
+            "t": 3.2,
+            "v": 14.89,
+            "dist": -8.41,
+            "accel": -4.3
+          },
+          {
+            "t": 3.4,
+            "v": 14.02,
+            "dist": -11.28,
+            "accel": -4.33
+          }
+        ]
+      }
+    },
+    "SC_04_Bridge_Overpass_Sharp_Shadow": {
+      "name": "Sunny Noon Sharp Bridge Shadow (Spurious Concrete Barrier)",
+      "confounder_feature": "High-Contrast Transverse Dark Edge in Tarmac",
+      "true_physical_hazard": false,
+      "vanilla_e2e": {
+        "phantom_brake_incident": true,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -8.28,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 18.06,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 27.78,
+            "dist": 68.61,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 27.78,
+            "dist": 63.06,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 27.78,
+            "dist": 57.5,
+            "accel": 0.0
+          },
+          {
+            "t": 0.6,
+            "v": 27.78,
+            "dist": 51.94,
+            "accel": 0.0
+          },
+          {
+            "t": 0.8,
+            "v": 27.78,
+            "dist": 46.39,
+            "accel": 0.0
+          },
+          {
+            "t": 1.0,
+            "v": 26.7,
+            "dist": 40.94,
+            "accel": -7.2
+          },
+          {
+            "t": 1.2,
+            "v": 25.26,
+            "dist": 35.78,
+            "accel": -7.2
+          },
+          {
+            "t": 1.4,
+            "v": 23.82,
+            "dist": 30.91,
+            "accel": -7.2
+          },
+          {
+            "t": 1.6,
+            "v": 22.38,
+            "dist": 26.32,
+            "accel": -7.2
+          },
+          {
+            "t": 1.8,
+            "v": 20.94,
+            "dist": 22.03,
+            "accel": -7.2
+          },
+          {
+            "t": 2.0,
+            "v": 19.5,
+            "dist": 18.02,
+            "accel": -7.2
+          },
+          {
+            "t": 2.2,
+            "v": 18.06,
+            "dist": 14.3,
+            "accel": -7.2
+          },
+          {
+            "t": 2.4,
+            "v": 18.06,
+            "dist": 10.69,
+            "accel": 0.0
+          },
+          {
+            "t": 2.6,
+            "v": 18.06,
+            "dist": 7.07,
+            "accel": 0.0
+          },
+          {
+            "t": 2.8,
+            "v": 18.06,
+            "dist": 3.46,
+            "accel": 0.0
+          },
+          {
+            "t": 3.0,
+            "v": 18.06,
+            "dist": -0.15,
+            "accel": 0.0
+          },
+          {
+            "t": 3.2,
+            "v": 18.06,
+            "dist": -3.76,
+            "accel": 0.0
+          },
+          {
+            "t": 3.4,
+            "v": 18.06,
+            "dist": -7.37,
+            "accel": 0.0
+          }
+        ]
+      },
+      "causal_deconfounded": {
+        "phantom_brake_incident": false,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -27.23,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 27.78,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 27.78,
+            "dist": 68.61,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 27.78,
+            "dist": 63.06,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 27.78,
+            "dist": 57.5,
+            "accel": 0.0
+          },
+          {
+            "t": 0.6,
+            "v": 27.78,
+            "dist": 51.94,
+            "accel": 0.0
+          },
+          {
+            "t": 0.8,
+            "v": 27.78,
+            "dist": 46.39,
+            "accel": 0.0
+          },
+          {
+            "t": 1.0,
+            "v": 27.78,
+            "dist": 40.83,
+            "accel": 0.0
+          },
+          {
+            "t": 1.2,
+            "v": 27.78,
+            "dist": 35.27,
+            "accel": 0.0
+          },
+          {
+            "t": 1.4,
+            "v": 27.78,
+            "dist": 29.72,
+            "accel": 0.0
+          },
+          {
+            "t": 1.6,
+            "v": 27.78,
+            "dist": 24.16,
+            "accel": 0.0
+          },
+          {
+            "t": 1.8,
+            "v": 27.78,
+            "dist": 18.61,
+            "accel": 0.0
+          },
+          {
+            "t": 2.0,
+            "v": 27.78,
+            "dist": 13.05,
+            "accel": 0.0
+          },
+          {
+            "t": 2.2,
+            "v": 27.78,
+            "dist": 7.49,
+            "accel": 0.0
+          },
+          {
+            "t": 2.4,
+            "v": 27.78,
+            "dist": 1.94,
+            "accel": 0.0
+          },
+          {
+            "t": 2.6,
+            "v": 27.78,
+            "dist": -3.62,
+            "accel": 0.0
+          },
+          {
+            "t": 2.8,
+            "v": 27.78,
+            "dist": -9.17,
+            "accel": 0.0
+          },
+          {
+            "t": 3.0,
+            "v": 27.78,
+            "dist": -14.73,
+            "accel": 0.0
+          },
+          {
+            "t": 3.2,
+            "v": 27.78,
+            "dist": -20.29,
+            "accel": 0.0
+          },
+          {
+            "t": 3.4,
+            "v": 27.78,
+            "dist": -25.84,
+            "accel": 0.0
+          }
+        ]
+      }
+    },
+    "SC_05_Frontage_Road_Speed_Sign": {
+      "name": "Adjacent Frontage Road 30 km/h Sign Mismatch",
+      "confounder_feature": "Circular 30 km/h Speed Limit Text in Peripheral View",
+      "true_physical_hazard": false,
+      "vanilla_e2e": {
+        "phantom_brake_incident": true,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -5.46,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 21.11,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 30.56,
+            "dist": 78.47,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 30.33,
+            "dist": 72.37,
+            "accel": -4.5
+          },
+          {
+            "t": 0.4,
+            "v": 29.43,
+            "dist": 66.42,
+            "accel": -4.5
+          },
+          {
+            "t": 0.6,
+            "v": 28.53,
+            "dist": 60.64,
+            "accel": -4.5
+          },
+          {
+            "t": 0.8,
+            "v": 27.63,
+            "dist": 55.05,
+            "accel": -4.5
+          },
+          {
+            "t": 1.0,
+            "v": 26.73,
+            "dist": 49.63,
+            "accel": -4.5
+          },
+          {
+            "t": 1.2,
+            "v": 25.83,
+            "dist": 44.4,
+            "accel": -4.5
+          },
+          {
+            "t": 1.4,
+            "v": 24.93,
+            "dist": 39.34,
+            "accel": -4.5
+          },
+          {
+            "t": 1.6,
+            "v": 24.03,
+            "dist": 34.47,
+            "accel": -4.5
+          },
+          {
+            "t": 1.8,
+            "v": 23.13,
+            "dist": 29.78,
+            "accel": -4.5
+          },
+          {
+            "t": 2.0,
+            "v": 22.23,
+            "dist": 25.26,
+            "accel": -4.5
+          },
+          {
+            "t": 2.2,
+            "v": 21.33,
+            "dist": 20.93,
+            "accel": -4.5
+          },
+          {
+            "t": 2.4,
+            "v": 21.11,
+            "dist": 16.7,
+            "accel": 0.0
+          },
+          {
+            "t": 2.6,
+            "v": 21.11,
+            "dist": 12.48,
+            "accel": 0.0
+          },
+          {
+            "t": 2.8,
+            "v": 21.11,
+            "dist": 8.26,
+            "accel": 0.0
+          },
+          {
+            "t": 3.0,
+            "v": 21.11,
+            "dist": 4.04,
+            "accel": 0.0
+          },
+          {
+            "t": 3.2,
+            "v": 21.11,
+            "dist": -0.18,
+            "accel": 0.0
+          },
+          {
+            "t": 3.4,
+            "v": 21.11,
+            "dist": -4.41,
+            "accel": 0.0
+          }
+        ]
+      },
+      "causal_deconfounded": {
+        "phantom_brake_incident": false,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -26.96,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 30.56,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 30.56,
+            "dist": 78.47,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 30.56,
+            "dist": 72.36,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 30.56,
+            "dist": 66.25,
+            "accel": 0.0
+          },
+          {
+            "t": 0.6,
+            "v": 30.56,
+            "dist": 60.14,
+            "accel": 0.0
+          },
+          {
+            "t": 0.8,
+            "v": 30.56,
+            "dist": 54.02,
+            "accel": 0.0
+          },
+          {
+            "t": 1.0,
+            "v": 30.56,
+            "dist": 47.91,
+            "accel": 0.0
+          },
+          {
+            "t": 1.2,
+            "v": 30.56,
+            "dist": 41.8,
+            "accel": 0.0
+          },
+          {
+            "t": 1.4,
+            "v": 30.56,
+            "dist": 35.69,
+            "accel": 0.0
+          },
+          {
+            "t": 1.6,
+            "v": 30.56,
+            "dist": 29.58,
+            "accel": 0.0
+          },
+          {
+            "t": 1.8,
+            "v": 30.56,
+            "dist": 23.46,
+            "accel": 0.0
+          },
+          {
+            "t": 2.0,
+            "v": 30.56,
+            "dist": 17.35,
+            "accel": 0.0
+          },
+          {
+            "t": 2.2,
+            "v": 30.56,
+            "dist": 11.24,
+            "accel": 0.0
+          },
+          {
+            "t": 2.4,
+            "v": 30.56,
+            "dist": 5.13,
+            "accel": 0.0
+          },
+          {
+            "t": 2.6,
+            "v": 30.56,
+            "dist": -0.98,
+            "accel": 0.0
+          },
+          {
+            "t": 2.8,
+            "v": 30.56,
+            "dist": -7.1,
+            "accel": 0.0
+          },
+          {
+            "t": 3.0,
+            "v": 30.56,
+            "dist": -13.21,
+            "accel": 0.0
+          },
+          {
+            "t": 3.2,
+            "v": 30.56,
+            "dist": -19.32,
+            "accel": 0.0
+          },
+          {
+            "t": 3.4,
+            "v": 30.56,
+            "dist": -25.43,
+            "accel": 0.0
+          }
+        ]
+      }
+    },
+    "SC_06_Swirling_Leaves_Ghost_Pedestrian": {
+      "name": "Swirling Cluster of Golden Autumn Leaves (Ghost Pedestrian)",
+      "confounder_feature": "Upright 1.6m High Dynamic Bounding Envelope with Non-Rigid Motion",
+      "true_physical_hazard": false,
+      "vanilla_e2e": {
+        "phantom_brake_incident": true,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": 15.8,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 0.0,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 13.89,
+            "dist": 34.31,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 13.89,
+            "dist": 31.53,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 12.69,
+            "dist": 28.9,
+            "accel": -6.0
+          },
+          {
+            "t": 0.6,
+            "v": 11.49,
+            "dist": 26.51,
+            "accel": -6.0
+          },
+          {
+            "t": 0.8,
+            "v": 10.29,
+            "dist": 24.36,
+            "accel": -6.0
+          },
+          {
+            "t": 1.0,
+            "v": 9.09,
+            "dist": 22.46,
+            "accel": -6.0
+          },
+          {
+            "t": 1.2,
+            "v": 7.89,
+            "dist": 20.79,
+            "accel": -6.0
+          },
+          {
+            "t": 1.4,
+            "v": 6.69,
+            "dist": 19.36,
+            "accel": -6.0
+          },
+          {
+            "t": 1.6,
+            "v": 5.49,
+            "dist": 18.17,
+            "accel": -6.0
+          },
+          {
+            "t": 1.8,
+            "v": 4.29,
+            "dist": 17.22,
+            "accel": -6.0
+          },
+          {
+            "t": 2.0,
+            "v": 3.09,
+            "dist": 16.52,
+            "accel": -6.0
+          },
+          {
+            "t": 2.2,
+            "v": 1.89,
+            "dist": 16.05,
+            "accel": -6.0
+          },
+          {
+            "t": 2.4,
+            "v": 0.69,
+            "dist": 15.82,
+            "accel": -6.0
+          },
+          {
+            "t": 2.6,
+            "v": 0.0,
+            "dist": 15.8,
+            "accel": -6.0
+          },
+          {
+            "t": 2.8,
+            "v": 0.0,
+            "dist": 15.8,
+            "accel": -6.0
+          },
+          {
+            "t": 3.0,
+            "v": 0.0,
+            "dist": 15.8,
+            "accel": -6.0
+          },
+          {
+            "t": 3.2,
+            "v": 0.0,
+            "dist": 15.8,
+            "accel": -6.0
+          },
+          {
+            "t": 3.4,
+            "v": 0.0,
+            "dist": 15.8,
+            "accel": -6.0
+          }
+        ]
+      },
+      "causal_deconfounded": {
+        "phantom_brake_incident": false,
+        "ghost_swerve_incident": false,
+        "min_clearance_m": -13.62,
+        "collision_probability": 0.0,
+        "final_velocity_mps": 13.89,
+        "trajectory": [
+          {
+            "t": 0.0,
+            "v": 13.89,
+            "dist": 34.31,
+            "accel": 0.0
+          },
+          {
+            "t": 0.2,
+            "v": 13.89,
+            "dist": 31.53,
+            "accel": 0.0
+          },
+          {
+            "t": 0.4,
+            "v": 13.89,
+            "dist": 28.75,
+            "accel": 0.0
+          },
+          {
+            "t": 0.6,
+            "v": 13.89,
+            "dist": 25.97,
+            "accel": 0.0
+          },
+          {
+            "t": 0.8,
+            "v": 13.89,
+            "dist": 23.19,
+            "accel": 0.0
+          },
+          {
+            "t": 1.0,
+            "v": 13.89,
+            "dist": 20.42,
+            "accel": 0.0
+          },
+          {
+            "t": 1.2,
+            "v": 13.89,
+            "dist": 17.64,
+            "accel": 0.0
+          },
+          {
+            "t": 1.4,
+            "v": 13.89,
+            "dist": 14.86,
+            "accel": 0.0
+          },
+          {
+            "t": 1.6,
+            "v": 13.89,
+            "dist": 12.08,
+            "accel": 0.0
+          },
+          {
+            "t": 1.8,
+            "v": 13.89,
+            "dist": 9.3,
+            "accel": 0.0
+          },
+          {
+            "t": 2.0,
+            "v": 13.89,
+            "dist": 6.53,
+            "accel": 0.0
+          },
+          {
+            "t": 2.2,
+            "v": 13.89,
+            "dist": 3.75,
+            "accel": 0.0
+          },
+          {
+            "t": 2.4,
+            "v": 13.89,
+            "dist": 0.97,
+            "accel": 0.0
+          },
+          {
+            "t": 2.6,
+            "v": 13.89,
+            "dist": -1.81,
+            "accel": 0.0
+          },
+          {
+            "t": 2.8,
+            "v": 13.89,
+            "dist": -4.59,
+            "accel": 0.0
+          },
+          {
+            "t": 3.0,
+            "v": 13.89,
+            "dist": -7.36,
+            "accel": 0.0
+          },
+          {
+            "t": 3.2,
+            "v": 13.89,
+            "dist": -10.14,
+            "accel": 0.0
+          },
+          {
+            "t": 3.4,
+            "v": 13.89,
+            "dist": -12.92,
+            "accel": 0.0
+          }
+        ]
+      }
+    }
+  }
+}

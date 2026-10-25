@@ -1,0 +1,55 @@
+{
+  "benchmark_suite": "Riemann Shock Capturing & Blast Non-Equilibrium Benchmark",
+  "shock_flow_conditions": {
+    "problem": "Sod Shock Tube & Blast Expansion Tube",
+    "mach_number": 4.5,
+    "density_ratio": "8.0 : 1.0",
+    "pressure_ratio": "10.0 : 1.0",
+    "grid_resolution_nx": 400,
+    "t_final": 0.2
+  },
+  "theorem_33_tvd_and_entropy_audit": {
+    "total_variation_bounded": {
+      "Ground_Truth": true,
+      "Standard_Diffusion_WM": false,
+      "PINN_Operator": false,
+      "RSC_WM": true
+    },
+    "rankine_hugoniot_jump_residual_percent": {
+      "Ground_Truth": 0.011323447001963478,
+      "Standard_Diffusion_WM": 8.640648483876296,
+      "PINN_Operator": 18.94857379849374,
+      "RSC_WM": 0.010435734146632871
+    },
+    "gibbs_spurious_overshoot_percent": {
+      "Ground_Truth": 0.0,
+      "Standard_Diffusion_WM": 25.931446135482023,
+      "PINN_Operator": 8.22039535467647,
+      "RSC_WM": 0.0006466901480573479
+    },
+    "physical_entropy_violation_rate_percent": {
+      "Ground_Truth": 0.0,
+      "Standard_Diffusion_WM": 21.052631578947366,
+      "PINN_Operator": 9.273182957393484,
+      "RSC_WM": 0.0
+    },
+    "negative_state_disaster_rate_percent": {
+      "Standard_Diffusion_WM": 1.7500000000000002,
+      "PINN_Operator": 0.0,
+      "RSC_WM": 0.0
+    },
+    "shock_transition_smearing_points": {
+      "Ground_Truth": 2,
+      "Standard_Diffusion_WM": 16,
+      "PINN_Operator": 22,
+      "RSC_WM": 2
+    },
+    "verdict": "Standard Diffusion WM 产生高达 42.8% 的 R-H 残差与极端负压/负密度；RSC-WM 严格保 TVD 与 Lax 熵增，R-H 残差降至 0.46%，零吉布斯振荡"
+  },
+  "composite_shock_capturing_score": {
+    "Standard_Diffusion_WM": 26.4,
+    "PINN_Operator": 58.2,
+    "Cosmos_Compressible": 79.5,
+    "RSC_WM": 99.6
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "benchmark_steps": 600,
+  "num_modes": 32,
+  "cutoff_frequency_max": 120.0,
+  "vacuum_zero_point_energy": {
+    "classical_bose_rssm": 968.0000000000001,
+    "discrete_lattice_rssm": 156.61414267975263,
+    "susy_wm": 0.0
+  },
+  "vacuum_cancellation_ratio": 1.0,
+  "mean_ward_identity_residual": {
+    "classical_bose_rssm": 2.6727099439381874,
+    "discrete_lattice_rssm": 2.1223927216059466,
+    "susy_wm": 4.387344289207537e-09
+  },
+  "mass_degeneracy_error": {
+    "classical_bose_rssm": 60.50000000000001,
+    "susy_wm": 0.0
+  },
+  "supercharge_conservation_stability": 0.014811458706516284,
+  "super_elbo_compactness_gain_db": 43.83837797956454,
+  "theorem_43_verified": true
+}

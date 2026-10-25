@@ -1,0 +1,21 @@
+{
+  "benchmark_steps": 1000,
+  "twin_paradox": {
+    "earth_time_gt": 19.999999999999662,
+    "ship_proper_time_gt": 12.435340800141791,
+    "galilean_proper_time_error": 7.564659199857871,
+    "causal_gru_proper_time_error": 2.9367942191675613,
+    "lorentz_wm_proper_time_error": 2.362554596402333e-13
+  },
+  "spacelike_causal_leakage": {
+    "galilean_model_mean": 0.2623865637228276,
+    "causal_gated_mean": 0.5821430936609568,
+    "lorentz_wm_mean": 0.0
+  },
+  "so13_lorentz_invariance_residual": {
+    "mean_error": 7.081446540269099e-14,
+    "max_error": 1.9326762412674725e-12,
+    "machine_precision_verified": true
+  },
+  "theorem_36_verified": true
+}

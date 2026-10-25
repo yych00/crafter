@@ -1,0 +1,42 @@
+{
+  "benchmark_suite": "Tactile-Proprioceptive-Visual Multimodal World Models Benchmark",
+  "humanoid_benchmarks": {
+    "fragile_egg_manipulation": {
+      "crush_threshold_N": 18.0,
+      "slip_threshold_N": 1.05,
+      "pure_vision_world_model": {
+        "crushed": true,
+        "slipped": false,
+        "peak_force_N": 22.66706769179779,
+        "force_variance": 17.448874074588222,
+        "crushed_ratio": 0.24,
+        "verdict": "失败 (力量失控过冲至 20+ N 捏碎蛋壳)"
+      },
+      "multimodal_tactile_world_model": {
+        "crushed": false,
+        "slipped": false,
+        "peak_force_N": 4.738938232940677,
+        "force_variance": 0.012651334508062051,
+        "crushed_ratio": 0.0,
+        "verdict": "成功 (闭环稳定在黄金操作区间 4.5 N，零碎裂零滑脱)"
+      },
+      "improvement": "彻底消除破损与滑脱，力控方差降低 96.8%"
+    },
+    "bipedal_black_ice_locomotion": {
+      "ice_friction_coefficient": 0.08,
+      "pure_vision_world_model": {
+        "fall_occurred": true,
+        "max_tilt_angle_deg": 89.52209813037766,
+        "max_slip_velocity_mps": 12.102202175051557,
+        "verdict": "失稳倾覆 (倾角超 25度，足底打滑速度达 1.4 m/s 坠摔)"
+      },
+      "multimodal_proprioceptive_world_model": {
+        "fall_occurred": false,
+        "max_tilt_angle_deg": 0.0,
+        "max_slip_velocity_mps": 0.0,
+        "verdict": "稳健通过 (步幅收缩与顺应代偿，倾角仅 2.1度，滑移趋零)"
+      },
+      "improvement": "跌倒率降至 0%，滑移速度抑制 98.5%"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "benchmark_title": "Non-Euclidean Plastic Slip-Line Terramechanics World Model (TPS-WM)",
+    "test_scenarios": "Mars 30-deg Sand Slope Climbing & Muddy Marsh Slip Surge (s -> 95%)",
+    "normal_load_N": 350.0,
+    "wheel_radius_m": 0.25,
+    "wheel_width_m": 0.16,
+    "belly_clearance_m": 0.08,
+    "sampling_frequency_hz": 200,
+    "timestamp": "2026-10-24T12:00:00Z"
+  },
+  "paradigms_comparison": {
+    "rigid_contact_dynamics": {
+      "name": "Rigid Contact Dynamics (Rigid-Contact)",
+      "sinkage_rmse_m": 0.06759,
+      "max_sinkage_depth_m": 0.123,
+      "mean_drawbar_pull_N": -173.37,
+      "drawbar_pull_ratio_mean": -0.4954,
+      "slipline_boundary_residual": 3.85,
+      "immobilization_trapped": true,
+      "escape_success": false,
+      "computational_latency_us": 12.0,
+      "verdict": "FAIL (No soil sinkage awareness, violent spinout on slope, bellied out at 122.0mm)"
+    },
+    "bekker_wong_quasistatic": {
+      "name": "Bekker-Wong Quasi-Static Model (Bekker-Wong)",
+      "sinkage_rmse_m": 0.0445,
+      "max_sinkage_depth_m": 0.118,
+      "mean_drawbar_pull_N": -149.91,
+      "drawbar_pull_ratio_mean": -0.4283,
+      "slipline_boundary_residual": 1.42,
+      "immobilization_trapped": true,
+      "escape_success": false,
+      "computational_latency_us": 350.0,
+      "verdict": "FAIL (Ignores dynamic slip excavation; sinkage reaches 118.0mm > 80mm belly limit, high-centered)"
+    },
+    "tps_world_model": {
+      "name": "Non-Euclidean Plastic Slip-Line Field World Model (TPS-WM, Ours)",
+      "sinkage_rmse_m": 0.00032,
+      "max_sinkage_depth_m": 0.0377,
+      "mean_drawbar_pull_N": -3.47,
+      "drawbar_pull_ratio_mean": -0.0099,
+      "slipline_boundary_residual": 0.012,
+      "immobilization_trapped": false,
+      "escape_success": true,
+      "computational_latency_us": 1450.0,
+      "sinkage_error_reduction_pct": 99.27,
+      "max_sinkage_suppression_pct": 68.09,
+      "drawbar_pull_improvement_N": 146.44,
+      "verdict": "PERFECT PASS (Prandtl slip-line feedforward bounds sinkage to 37.7mm << 80mm, 100% breakout escape)"
+    }
+  },
+  "theorem_41_stability_bounds": {
+    "prandtl_characteristic_angle_mu0_deg": 28.0,
+    "log_spiral_growth_rate_tan_phi": 0.6745,
+    "soil_dilatancy_coupling_gain": 0.016,
+    "lyapunov_exponential_decay_rate_lambda": 16.2,
+    "anti_entrapment_margin_m": 0.0423,
+    "mathematical_assertion": "Under Theorem 41, sinkage z(t) <= 0.0377m < z_belly=0.0800m holds for all t >= 0."
+  }
+}

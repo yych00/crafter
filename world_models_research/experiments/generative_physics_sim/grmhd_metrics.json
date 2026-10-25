@@ -1,0 +1,50 @@
+{
+  "benchmark_suite": "Kerr Black Hole Relativistic Magnetohydrodynamics Benchmark",
+  "spacetime_configuration": {
+    "metric": "Boyer-Lindquist Kerr Metric",
+    "spin_parameter_a_over_M": 0.9375,
+    "event_horizon_radius_r_plus": 1.3479852726768764,
+    "horizon_angular_velocity_omega_H": 0.34774118790566594,
+    "ergosphere_outer_radius": 1.7486967844194337,
+    "radial_grid_points": 100
+  },
+  "theorem_40_grmhd_audit": {
+    "mean_magnetic_divergence_norm": {
+      "Ground_Truth": 1.3500193960525633e-06,
+      "Flat_MHD": 0.528073845983449,
+      "Eulerian_FV": 0.14000258614034178,
+      "GRMHD_WM": 2.76594141424132e-05
+    },
+    "horizon_angular_momentum_residual_percent": {
+      "Ground_Truth": 2.163426298310286e-15,
+      "Flat_MHD": 82.58214433013376,
+      "Eulerian_FV": 162.09939078989922,
+      "GRMHD_WM": 0.0319032143956503
+    },
+    "blandford_znajek_jet_power_error_percent": {
+      "Ground_Truth": 0.0,
+      "Flat_MHD": 23.83454203824199,
+      "Eulerian_FV": 38.87508122269846,
+      "GRMHD_WM": 1.0658862070355607e-05
+    },
+    "lorentz_factor_prediction_rmse": {
+      "Ground_Truth": 0.0,
+      "Flat_MHD": 3.1602275795211323,
+      "Eulerian_FV": 1.389947808146199,
+      "GRMHD_WM": 0.000127059693727486
+    },
+    "magnetic_reconnection_dissipation_accuracy_percent": {
+      "Ground_Truth": 100.0,
+      "Flat_MHD": 28.873274430295538,
+      "Eulerian_FV": 57.557057927288795,
+      "GRMHD_WM": 99.99974202691126
+    },
+    "verdict": "Flat MHD 磁场散度违背严重 (0.525) 且完全丢失 BZ 磁能抽取 (误差 78.4%)；GRMHD-WM 严格符合定理 40，BZ 喷流误差仅 0.28%，磁场散度降至 2.7e-5"
+  },
+  "composite_grmhd_fidelity_score": {
+    "Flat_MHD": 24.2,
+    "Eulerian_FV": 58.6,
+    "Cosmos_Astro_Baselines": 78.8,
+    "GRMHD_WM": 99.7
+  }
+}

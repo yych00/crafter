@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "suite_name": "RSSM Discrete Dynamics & Ablation Benchmark",
+    "timestamp": "2026-10-23 02:35:59",
+    "elapsed_seconds": 47.66,
+    "environment": "HybridNonlinearPhysicsEnv (16-D obs, 4 discrete regimes, multi-scale rewards)"
+  },
+  "experiment_1_discrete_vs_continuous": {
+    "continuous_final_recon_mse": 1.5939082735924357,
+    "discrete_final_recon_mse": 1.7352853024314063,
+    "continuous_final_entropy": 43.41484317114415,
+    "discrete_final_entropy": 86.92636130861928,
+    "continuous_final_kl": 2.8711834044013917,
+    "discrete_final_kl": 2.897916836475063,
+    "continuous_t28_compounding_mse": 10.33386832120511,
+    "discrete_t28_compounding_mse": 10.505577026706682,
+    "reconstruction_improvement_ratio": 0.9185280779818286,
+    "compounding_error_reduction_ratio": 0.9836554712734898,
+    "regime_final_mses": {
+      "continuous": {
+        "0": 1.6188615728144542,
+        "1": 0.0,
+        "2": 0.7454961000438015,
+        "3": 0.0
+      },
+      "discrete": {
+        "0": 1.7194501267895494,
+        "1": 0.0,
+        "2": 2.273681274254546,
+        "3": 0.0
+      }
+    }
+  },
+  "experiment_2_kl_balancing": {
+    "0.2": {
+      "final_kl_div": 1.7757914821468255,
+      "final_entropy": 103.37043700944888,
+      "final_recon_mse": 3.5131444916192387,
+      "t28_compounding_mse": 6.632735556731011
+    },
+    "0.5": {
+      "final_kl_div": 2.2409354432490627,
+      "final_entropy": 97.19923061586051,
+      "final_recon_mse": 2.522687736970248,
+      "t28_compounding_mse": 8.080659272463267
+    },
+    "0.8": {
+      "final_kl_div": 2.384364718716263,
+      "final_entropy": 82.47249788298592,
+      "final_recon_mse": 2.8391444770507146,
+      "t28_compounding_mse": 19.448384820095836
+    }
+  },
+  "experiment_3_symlog_stability": {
+    "value_magnitudes": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0,
+      10000.0
+    ],
+    "grad_norm_summary": {
+      "symlog": {
+        "at_1e_minus_2": 0.003648994602994354,
+        "at_1e_0": 0.10372048458386854,
+        "at_1e_4": 0.00010801997617360035,
+        "ratio_1e4_to_1e_minus_2": 0.029602668111638062
+      },
+      "linear": {
+        "at_1e_minus_2": 0.0037021801120403785,
+        "at_1e_0": 0.3256784045795581,
+        "at_1e_4": 3912.5699544462223,
+        "ratio_1e4_to_1e_minus_2": 1056828.635030912
+      },
+      "clip": {
+        "at_1e_minus_2": 0.0037021801120403785,
+        "at_1e_0": 0.3256784045795581,
+        "at_1e_4": 0.0,
+        "ratio_1e4_to_1e_minus_2": 0.0
+      }
+    },
+    "grad_variance_at_1e4": {
+      "symlog": 2.505001179125262e-08,
+      "linear": 11226288.005723784,
+      "clip": 0.0
+    },
+    "relative_error_at_1e4": {
+      "symlog": 0.35808006104931395,
+      "linear": 0.35808006104931395,
+      "clip": 0.9947276180043642
+    }
+  }
+}

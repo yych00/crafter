@@ -1,0 +1,42 @@
+{
+  "Linked_Rings_Untangling": {
+    "Euclidean_RSSM": {
+      "bottleneck_distance": 0.1975856888678766,
+      "betti_accuracy_pct": 41.935483870967744,
+      "false_crossing_rate_pct": 59.354838709677416,
+      "geometric_mse": 0.029191698023726443
+    },
+    "Latent_VAE": {
+      "bottleneck_distance": 0.08525366388982342,
+      "betti_accuracy_pct": 67.74193548387096,
+      "false_crossing_rate_pct": 29.03225806451613,
+      "geometric_mse": 0.006537292485929004
+    },
+    "TDA_WM": {
+      "bottleneck_distance": 0.15040445183554002,
+      "betti_accuracy_pct": 36.12903225806451,
+      "false_crossing_rate_pct": 27.09677419354839,
+      "geometric_mse": 0.053181585746877376
+    }
+  },
+  "Torus_PinchOff_Transition": {
+    "Euclidean_RSSM": {
+      "bottleneck_distance": 0.07360491380095482,
+      "betti_accuracy_pct": 75.0,
+      "false_crossing_rate_pct": 0.0,
+      "geometric_mse": 0.00022088184814492707
+    },
+    "Latent_VAE": {
+      "bottleneck_distance": 0.01521349052588145,
+      "betti_accuracy_pct": 75.0,
+      "false_crossing_rate_pct": 0.0,
+      "geometric_mse": 0.00013576946758904444
+    },
+    "TDA_WM": {
+      "bottleneck_distance": 0.011494714973701371,
+      "betti_accuracy_pct": 75.0,
+      "false_crossing_rate_pct": 0.0,
+      "geometric_mse": 0.00010873874683359948
+    }
+  }
+}

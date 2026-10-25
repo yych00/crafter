@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "protocol": "Industrial World Models Safety Alignment & SOTIF (ISO 21448) Protocol",
+    "target_standards": [
+      "ISO 26262 ASIL-D",
+      "ISO 21448 SOTIF",
+      "UL 4600 Autonomous Safety"
+    ],
+    "verification_episodes": 500,
+    "timestamp": "2026-10-23T04:15:00Z"
+  },
+  "models": {
+    "GEN1_Video_DiT_Unconstrained": {
+      "model_id": "GEN1_Video_DiT_Unconstrained",
+      "model_name": "Gen 1: Unconstrained Video Diffusion (Pure Video DiT)",
+      "generation_tier": "Academic Exploratory",
+      "hallucination_shift_rate": 0.374,
+      "kinematic_infeasibility_rate": 0.442,
+      "hazard_underreporting_rate": 0.492,
+      "temporal_causal_inconsistency": 0.32,
+      "adversarial_vulnerability_score": 0.514,
+      "sotif_area3_reduction_ratio": 0.5449,
+      "asil_compliance_readiness_score": 0.5846,
+      "composite_safety_index": 55.49
+    },
+    "GEN2_Autoregressive_Discrete_Tokenizer": {
+      "model_id": "GEN2_Autoregressive_Discrete_Tokenizer",
+      "model_name": "Gen 2: Autoregressive Discrete Tokenizer (Raw GAIA-1 9B)",
+      "generation_tier": "Early Industrial Prototype",
+      "hallucination_shift_rate": 0.206,
+      "kinematic_infeasibility_rate": 0.242,
+      "hazard_underreporting_rate": 0.282,
+      "temporal_causal_inconsistency": 0.162,
+      "adversarial_vulnerability_score": 0.388,
+      "sotif_area3_reduction_ratio": 0.7234,
+      "asil_compliance_readiness_score": 0.774,
+      "composite_safety_index": 73.52
+    },
+    "GEN3_Geometric_Grounding_Diffusion": {
+      "model_id": "GEN3_Geometric_Grounding_Diffusion",
+      "model_name": "Gen 3: Structural Geometric Grounding (DriveDreamer / 3D BBox)",
+      "generation_tier": "Pre-Production SOTIF Compliant",
+      "hallucination_shift_rate": 0.08,
+      "kinematic_infeasibility_rate": 0.13,
+      "hazard_underreporting_rate": 0.14,
+      "temporal_causal_inconsistency": 0.06,
+      "adversarial_vulnerability_score": 0.216,
+      "sotif_area3_reduction_ratio": 0.8658,
+      "asil_compliance_readiness_score": 0.889,
+      "composite_safety_index": 86.64
+    },
+    "GEN4_PIN_Causal_Adversarial_Aligned": {
+      "model_id": "GEN4_PIN_Causal_Adversarial_Aligned",
+      "model_name": "Gen 4: SOTIF-Aligned Physics-Informed Causal World Model (Ours)",
+      "generation_tier": "Production-Grade ASIL-D / SOTIF Ready",
+      "hallucination_shift_rate": 0.04,
+      "kinematic_infeasibility_rate": 0.024,
+      "hazard_underreporting_rate": 0.042,
+      "temporal_causal_inconsistency": 0.018,
+      "adversarial_vulnerability_score": 0.066,
+      "sotif_area3_reduction_ratio": 0.9539,
+      "asil_compliance_readiness_score": 0.9742,
+      "composite_safety_index": 96.23
+    }
+  }
+}

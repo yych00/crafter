@@ -1,0 +1,18 @@
+{
+  "Pure_BlackBox_Planning": {
+    "axiom_violation_rate_pct": 100.0,
+    "precondition_failure_rate_pct": 0.0,
+    "task_formal_success_rate_pct": 0.0,
+    "avg_episode_return": 0.4679652225971222,
+    "avg_steps_to_goal": 45.0,
+    "counterexamples_pruned": 0
+  },
+  "Neuro_Symbolic_LTL_WM": {
+    "axiom_violation_rate_pct": 0.0,
+    "precondition_failure_rate_pct": 0.0,
+    "task_formal_success_rate_pct": 68.0,
+    "avg_episode_return": 127.97951923519373,
+    "avg_steps_to_goal": 32.705882352941174,
+    "counterexamples_pruned": 56696
+  }
+}

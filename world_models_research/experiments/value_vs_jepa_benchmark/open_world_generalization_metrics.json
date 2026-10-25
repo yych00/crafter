@@ -1,0 +1,77 @@
+{
+  "source_baseline_r2": {
+    "Reconstruction": 0.042217474430799484,
+    "Pure_MuZero": 0.15940187871456146,
+    "Foundation_JEPA": 0.3875616788864136
+  },
+  "zero_shot_generalization": {
+    "heavy_payload_arm": {
+      "Reconstruction": 0.0,
+      "Pure_MuZero": 0.04163050651550293,
+      "Foundation_JEPA": 0.07423078268766403
+    },
+    "turbulent_drone": {
+      "Reconstruction": 0.0024000604171305895,
+      "Pure_MuZero": 0.06094486638903618,
+      "Foundation_JEPA": 0.21905691921710968
+    },
+    "slippery_quadruped": {
+      "Reconstruction": 0.0,
+      "Pure_MuZero": 0.0,
+      "Foundation_JEPA": 0.0749109610915184
+    }
+  },
+  "transfer_retention_ratios": {
+    "heavy_payload_arm": {
+      "Reconstruction": 0.0,
+      "Pure_MuZero": 0.26116697526539223,
+      "Foundation_JEPA": 0.19153282362939594
+    },
+    "turbulent_drone": {
+      "Reconstruction": 0.05684992883846318,
+      "Pure_MuZero": 0.3823346806229883,
+      "Foundation_JEPA": 0.5652182120960179
+    },
+    "slippery_quadruped": {
+      "Reconstruction": 0.0,
+      "Pure_MuZero": 0.0,
+      "Foundation_JEPA": 0.19328784338730579
+    }
+  },
+  "few_shot_adaptation_curves": {
+    "k_samples": [
+      15,
+      30,
+      60,
+      120,
+      240
+    ],
+    "Reconstruction": [
+      0.0,
+      0.0,
+      0.0,
+      0.006331940647214651,
+      0.04113520309329033
+    ],
+    "Pure_MuZero": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.13040992617607117
+    ],
+    "Foundation_JEPA": [
+      0.0,
+      0.0,
+      0.03124990127980709,
+      0.21256767213344574,
+      0.24101980030536652
+    ]
+  },
+  "latent_effective_ranks": {
+    "Reconstruction": 9.036112785339355,
+    "Pure_MuZero": 20.744321823120117,
+    "Foundation_JEPA": 27.481243133544922
+  },
+  "pretraining_time_sec": 17.600595951080322
+}

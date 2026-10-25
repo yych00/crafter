@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "benchmark_title": "Universal Sim2Real Physical Fidelity & Actuator Gap Benchmark",
+    "maneuver": "ISO 3888-2 Severe Double-Lane Change (Moose Test at 75.6 km/h)",
+    "vehicle_speed_kmh": 75.60000000000001,
+    "vehicle_mass_kg": 1600.0,
+    "actuator_hardware_delay_ms": 20.0,
+    "gearbox_backlash_deg": 1.15,
+    "actuator_deadband_deg": 0.69,
+    "wet_surface_friction_mu": 0.6,
+    "tire_model": "Pacejka Magic Formula (Nonlinear Slip Saturation)",
+    "timestamp": "2026-10-24T08:30:00Z"
+  },
+  "paradigms_comparison": {
+    "vanilla_sim_world_model": {
+      "name": "Vanilla Sim World Model (Uncalibrated Zero-Delay Assumption)",
+      "rmse_lateral_m": 33.0848,
+      "max_lateral_error_m": 83.2199,
+      "max_yaw_rate_rad_s": 1.3014,
+      "max_sideslip_deg": 73.21,
+      "boundary_breached": true,
+      "spinout_occurred": true,
+      "moose_test_passed": false,
+      "sim2real_wasserstein_dist": 0.842,
+      "fidelity_grade": "FAIL (Phase lag divergence, severe cone strike & spinout)"
+    },
+    "domain_randomization_world_model": {
+      "name": "Classical Domain Randomization WM (DR-WM)",
+      "rmse_lateral_m": 2.6647,
+      "max_lateral_error_m": 12.5902,
+      "max_yaw_rate_rad_s": 1.4188,
+      "max_sideslip_deg": 58.96,
+      "boundary_breached": true,
+      "spinout_occurred": true,
+      "moose_test_passed": false,
+      "sim2real_wasserstein_dist": 0.415,
+      "fidelity_grade": "FAIL (Sluggish corner cutting, cone strike on wet patch)"
+    },
+    "physics_aware_sim2real_world_model": {
+      "name": "Physics-Aware Calibrated Sim2Real-WM (Ours)",
+      "rmse_lateral_m": 0.1951,
+      "max_lateral_error_m": 0.4245,
+      "max_yaw_rate_rad_s": 0.6428,
+      "max_sideslip_deg": 5.8,
+      "boundary_breached": false,
+      "spinout_occurred": false,
+      "moose_test_passed": true,
+      "sim2real_wasserstein_dist": 0.052,
+      "error_reduction_vs_vanilla_pct": 99.41,
+      "error_reduction_vs_dr_pct": 92.68,
+      "fidelity_grade": "PASS (Flawless ISO 3888-2 Compliance, Zero Cone Touch)"
+    }
+  },
+  "theorem_31_theoretical_bounds": {
+    "lipshitz_constant_L_delay": 2.45,
+    "backlash_perturbation_bound": 0.035,
+    "wasserstein_upper_bound": 0.0585,
+    "empirical_wasserstein_distance": 0.052,
+    "generalization_margin_satisfied": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "Isolated_Private": {
+    "success_rate_pct": 4.0,
+    "avg_episode_return": -61.28689926460385,
+    "latent_consensus_divergence": 17.725021640777587,
+    "bandwidth_bytes_per_step": 0.0,
+    "bandwidth_kb_per_step": 0.0,
+    "communication_efficiency": 80.0
+  },
+  "Centralized_Cloud": {
+    "success_rate_pct": 4.0,
+    "avg_episode_return": -52.17781409341842,
+    "latent_consensus_divergence": 0.0,
+    "bandwidth_bytes_per_step": 4096.0,
+    "bandwidth_kb_per_step": 4.0,
+    "communication_efficiency": 0.9876543209876544
+  },
+  "Distributed_Collective": {
+    "success_rate_pct": 0.0,
+    "avg_episode_return": -76.28551313772797,
+    "latent_consensus_divergence": 1.3144283862346782,
+    "bandwidth_bytes_per_step": 64.0,
+    "bandwidth_kb_per_step": 0.0625,
+    "communication_efficiency": 0.0
+  }
+}

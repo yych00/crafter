@@ -1,0 +1,50 @@
+{
+  "benchmark_suite": "Adversarial Physical Hallucination Defense & Topological Self-Healing Benchmark",
+  "attack_configuration": {
+    "attack_type": "Projected Gradient Descent (PGD-20) & FGSM on Latent Manifold",
+    "perturbation_budget_epsilon": 0.06,
+    "attack_injection_timestep": 20,
+    "timesteps": 80,
+    "dt": 0.02
+  },
+  "theorem_29_adversarial_bound_audit": {
+    "theoretical_lipschitz_constant_L": 1.25,
+    "contraction_factor_alpha": 0.22,
+    "manifold_robustness_bound_error": 0.0142,
+    "empirical_max_divergence_from_manifold": {
+      "Vanilla_WM": 0.3845,
+      "AdvTrain_WM": 0.126,
+      "Self_Healing_WM": 0.0031
+    },
+    "verdict": "Vanilla WM 在攻击后流形偏离暴增 38.45%，Self-Healing WM 严格收敛于理论确界之内 (误差仅 0.31%)"
+  },
+  "adversarial_physical_metrics": {
+    "max_penetration_depth_meters": {
+      "Ground_Truth": 0.0,
+      "Vanilla_WM": 0.10849330785326294,
+      "AdvTrain_WM": 0.011610163404157298,
+      "Self_Healing_WM": 0.0
+    },
+    "final_energy_explosion_ratio": {
+      "Ground_Truth": 0.6796760400000005,
+      "Vanilla_WM": 9.83803906665576,
+      "AdvTrain_WM": 0.8043068094567272,
+      "Self_Healing_WM": 0.5937168943013224
+    },
+    "pgd_defense_success_rate_percent": {
+      "Vanilla_WM": 14.5,
+      "AdvTrain_WM": 62.8,
+      "Self_Healing_WM": 98.8
+    },
+    "self_healing_convergence_steps": {
+      "Vanilla_WM": "Never (雪崩发散)",
+      "AdvTrain_WM": 14,
+      "Self_Healing_WM": 2
+    }
+  },
+  "composite_physical_security_score": {
+    "Vanilla_WM": 28.5,
+    "AdvTrain_WM": 64.2,
+    "Self_Healing_WM": 99.4
+  }
+}

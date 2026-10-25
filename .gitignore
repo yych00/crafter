@@ -7,3 +7,7 @@ __pycache__/
 .DS_Store
 .venv/
 logs/
+output/
+scratch/
+experiments/
+.agents/

@@ -1,0 +1,16 @@
+{
+    "final_hamiltonian_residual_flat": 573781097982.6755,
+    "final_hamiltonian_residual_unconstrained": 1.8959413441510156e+34,
+    "final_hamiltonian_residual_adm_wm": 3.394146676409096e-05,
+    "final_momentum_residual_flat": 11152194.261389796,
+    "final_momentum_residual_unconstrained": 2.3342735908785946e+18,
+    "final_momentum_residual_adm_wm": 1.8258847678572811e-16,
+    "precision_gain_adm_vs_flat": 1.6905017746307844e+16,
+    "precision_gain_adm_vs_unconstrained": 5.585914590340757e+38,
+    "causal_horizon_fidelity_flat_pct": 85.6709156016437,
+    "causal_horizon_fidelity_adm_pct": 100.0,
+    "lyapunov_exponent_unconstrained": 0.5428014411899412,
+    "lyapunov_exponent_adm_wm": -2.647305328522312,
+    "diffeomorphism_preserved": true,
+    "execution_time_sec": 0.08943748474121094
+}

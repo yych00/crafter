@@ -1,0 +1,14 @@
+{
+    "W2_distance": 6.457658069541339,
+    "W2_squared": 41.70134774311238,
+    "action_benamou_brenier_ot": 41.70134774311237,
+    "action_euclidean_teleportation": 141.92133204178745,
+    "action_reduction_percentage": 70.61657529339298,
+    "peak_kinetic_energy_ratio_euc_vs_ot": 25.555687345279015,
+    "median_dissipation_identity_residual": 0.0005950470965922187,
+    "bakry_emery_decay_violations": 0,
+    "initial_fisher_information": 4.575143397366708,
+    "final_fisher_information": 0.05757588824249189,
+    "brenier_convexity_verified": true,
+    "execution_time_sec": 0.5680298805236816
+}

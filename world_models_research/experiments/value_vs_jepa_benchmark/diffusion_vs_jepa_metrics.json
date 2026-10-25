@@ -1,0 +1,65 @@
+{
+  "training_times": {
+    "Diffusion_WM": 8.113104104995728,
+    "JEPA": 4.77217173576355,
+    "MuZero": 4.674217224121094
+  },
+  "visual_fidelity_psnr": {
+    "DDIM_2": 6.210516559041964,
+    "DDIM_5": 7.823874717458572,
+    "DDIM_10": 8.069967967326342,
+    "DDIM_20": 8.17500171669387,
+    "JEPA": 0.0,
+    "MuZero": 0.0
+  },
+  "mpc_evaluations": {
+    "Diffusion_DDIM_2": {
+      "return": -44.598478748463094,
+      "latency_ms": 2.583740999616566,
+      "fps": 387.03569752092125,
+      "psnr_db": 6.210516559041964,
+      "num_steps": 2,
+      "type": "Generative Diffusion"
+    },
+    "Diffusion_DDIM_5": {
+      "return": -48.02879754267633,
+      "latency_ms": 6.161484500262304,
+      "fps": 162.29854996104078,
+      "psnr_db": 7.823874717458572,
+      "num_steps": 5,
+      "type": "Generative Diffusion"
+    },
+    "Diffusion_DDIM_10": {
+      "return": -55.765779026784,
+      "latency_ms": 11.287727500093752,
+      "fps": 88.59179139394483,
+      "psnr_db": 8.069967967326342,
+      "num_steps": 10,
+      "type": "Generative Diffusion"
+    },
+    "Diffusion_DDIM_20": {
+      "return": -50.47514973208308,
+      "latency_ms": 23.208234000048833,
+      "fps": 43.088155694995834,
+      "psnr_db": 8.17500171669387,
+      "num_steps": 20,
+      "type": "Generative Diffusion"
+    },
+    "JEPA_1Step": {
+      "return": -50.315370976924896,
+      "latency_ms": 0.554657999855408,
+      "fps": 1802.9127863668905,
+      "psnr_db": 0.0,
+      "num_steps": 1,
+      "type": "Abstract Feature WM"
+    },
+    "MuZero_1Step": {
+      "return": -39.217013385146856,
+      "latency_ms": 0.5492215000413125,
+      "fps": 1820.7590196756314,
+      "psnr_db": 0.0,
+      "num_steps": 1,
+      "type": "Value-Equivalent WM"
+    }
+  }
+}

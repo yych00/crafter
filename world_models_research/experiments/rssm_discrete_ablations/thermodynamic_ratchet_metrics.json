@@ -1,0 +1,23 @@
+{
+  "benchmark_steps": 600,
+  "num_particles": 1500,
+  "opposing_load_force": 0.25,
+  "net_drift_velocity": {
+    "quasi_static_model": 0.0,
+    "deterministic_periodic_model": 0.106505642246794,
+    "tfi_wm_information_ratchet": 2.0703527197253155
+  },
+  "ratchet_transport_gain_factor": 19.438901790084614,
+  "total_extracted_work": 3.1118570284412406,
+  "total_mutual_information_bits": 596.9883993751691,
+  "landauer_energy_upper_bound": 413.8008258538931,
+  "second_law_landauer_violation": false,
+  "crooks_and_jarzynski": {
+    "true_free_energy_diff_delta_F": 0.0,
+    "jarzynski_lhs_exp_avg": 1.1143525933469234,
+    "jarzynski_equality_error": 0.11435259334692338,
+    "mean_forward_work": 0.7528391104433325,
+    "mean_reverse_work": 0.7781718374517061
+  },
+  "theorem_55_verified": true
+}

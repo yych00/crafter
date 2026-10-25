@@ -1,0 +1,21 @@
+{
+  "benchmark_steps": 600,
+  "noncommutative_theta": 0.08,
+  "theoretical_minimum_length_l_min": 0.2,
+  "final_wavepacket_radius": {
+    "ground_truth": 1.1653842528764646,
+    "classical_smooth_rssm": 0.05082348957253488,
+    "discrete_lattice_rssm": 0.75,
+    "ncg_wm": 1.2092637565983368
+  },
+  "gup_violation_rate": {
+    "classical_smooth_rssm": 0.30333333333333334,
+    "ncg_wm": 0.0
+  },
+  "moyal_star_associativity_residual": 0.00047788136058139616,
+  "uv_ir_turning_point": {
+    "p_critical": 3.585858585858586,
+    "delta_x_min": 0.28287096315265325
+  },
+  "theorem_39_verified": true
+}

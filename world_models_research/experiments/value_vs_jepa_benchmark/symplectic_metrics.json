@@ -1,0 +1,36 @@
+{
+  "Heavy_Top_Precession_1000Steps": {
+    "Euclidean_JEPA": {
+      "symplectic_residual": 2.963293418884277,
+      "volume_drift": 1.000036358833313,
+      "energy_conservation_mse": 1407.5344226694833,
+      "trajectory_mse": 3.4483906686306
+    },
+    "Standard_Autoencoder": {
+      "symplectic_residual": 3.1977435615062713,
+      "volume_drift": 0.9999897480010986,
+      "energy_conservation_mse": 509.94105387028645,
+      "trajectory_mse": 1.8639949560165405
+    },
+    "SFB_JEPA": {
+      "symplectic_residual": 0.02422757442202419,
+      "volume_drift": 0.022887127473950386,
+      "energy_conservation_mse": 0.0007905181098790872,
+      "trajectory_mse": 8.649494171142578
+    }
+  },
+  "Chaotic_Double_Pendulum_Volume": {
+    "Euclidean_JEPA": {
+      "symplectic_residual": 2.9483896040916444,
+      "volume_drift": 1.0000110864639282
+    },
+    "Standard_Autoencoder": {
+      "symplectic_residual": 4.566218800544739,
+      "volume_drift": 0.992893397808075
+    },
+    "SFB_JEPA": {
+      "symplectic_residual": 0.009547128365375102,
+      "volume_drift": 0.007352769374847412
+    }
+  }
+}

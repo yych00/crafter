@@ -1,0 +1,102 @@
+{
+  "benchmark_suite": "2024-2025 Next-Gen Physical World Models Benchmark",
+  "models_evaluated": [
+    "Ground_Truth",
+    "Vanilla_DiT",
+    "MovieGen",
+    "Cosmos",
+    "Genie2"
+  ],
+  "free_fall_kinematics_audit": {
+    "Vanilla_DiT": {
+      "mean_displacement_error_m": 0.5726648714046371,
+      "max_displacement_error_m": 1.91518625494251,
+      "mean_acceleration_error_mps2": 3.4543480898322576
+    },
+    "MovieGen": {
+      "mean_displacement_error_m": 0.4715553266196131,
+      "max_displacement_error_m": 0.7074994151187841,
+      "mean_acceleration_error_mps2": 1.3114329507763105
+    },
+    "Cosmos": {
+      "mean_displacement_error_m": 0.43097668920719046,
+      "max_displacement_error_m": 0.8021375765558343,
+      "mean_acceleration_error_mps2": 0.14550780923899181
+    },
+    "Genie2": {
+      "mean_displacement_error_m": 0.38127729575991154,
+      "max_displacement_error_m": 0.6838428989731389,
+      "mean_acceleration_error_mps2": 0.26895714636186496
+    }
+  },
+  "collision_restitution_audit": {
+    "Vanilla_DiT": {
+      "measured_restitutions": [
+        0.4115674257269216,
+        0.25122529165700974,
+        0.11445881156080137,
+        0.0
+      ],
+      "mean_restitution_deficit": 0.6556871177638168,
+      "fourth_bounce_survival": false
+    },
+    "MovieGen": {
+      "measured_restitutions": [
+        0.6610484893849664,
+        0.4842890251901939
+      ],
+      "mean_restitution_deficit": 0.2773312427124198,
+      "fourth_bounce_survival": false
+    },
+    "Cosmos": {
+      "measured_restitutions": [
+        0.8457276856495244
+      ],
+      "mean_restitution_deficit": 0.004272314350475592,
+      "fourth_bounce_survival": false
+    },
+    "Genie2": {
+      "measured_restitutions": [
+        0.8050643560786027
+      ],
+      "mean_restitution_deficit": 0.04493564392139726,
+      "fourth_bounce_survival": false
+    }
+  },
+  "fluid_continuity_audit": {
+    "Vanilla_DiT": {
+      "max_mass_drift_ratio": 0.2956602472874323,
+      "final_mass_retention_ratio": 0.7043397527125677
+    },
+    "MovieGen": {
+      "max_mass_drift_ratio": 0.22264236865267834,
+      "final_mass_retention_ratio": 0.8077082296550263
+    },
+    "Cosmos": {
+      "max_mass_drift_ratio": 0.04379407936481968,
+      "final_mass_retention_ratio": 0.9565823151329431
+    },
+    "Genie2": {
+      "max_mass_drift_ratio": 0.06106347669680929,
+      "final_mass_retention_ratio": 0.9526741926667037
+    }
+  },
+  "composite_score_card": {
+    "Vanilla_DiT": {
+      "physics_score": 42.5,
+      "verdict": "严重微观物理失真 (重力欠加速，碰撞黏滞，流体蒸发)"
+    },
+    "MovieGen": {
+      "physics_score": 64.8,
+      "verdict": "宏观视觉逼真，微观二阶导数断裂，缺乏守恒硬约束"
+    },
+    "Cosmos": {
+      "physics_score": 91.2,
+      "verdict": "Physical AI 领军水平，重力与刚体大幅收敛，流体微弱漂移"
+    },
+    "Genie2": {
+      "physics_score": 89.6,
+      "verdict": "3D 交互环境卓越，持久性记忆极佳，碰撞恢复略有方差"
+    }
+  }
+}

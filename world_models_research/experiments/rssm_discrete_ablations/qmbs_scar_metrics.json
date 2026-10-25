@@ -1,0 +1,19 @@
+{
+    "lattice_chain_length": 12,
+    "unconstrained_dimension": 4096,
+    "fibonacci_blockade_dimension": 322,
+    "subspace_compression_ratio_pct": 92.138671875,
+    "expected_revival_period": 4.724199479082396,
+    "measured_revival_period": 4.800000000000001,
+    "revival_period_error_pct": 1.6045156698660035,
+    "peak_return_fidelity_qmbs_pct": 84.4343726069271,
+    "second_return_fidelity_qmbs_pct": 76.3118776153489,
+    "thermal_return_fidelity_pct": 0.3129640276926307,
+    "mean_thermal_entanglement_entropy": 1.9869536010137987,
+    "mean_scar_entanglement_entropy": 1.5436086954360464,
+    "entanglement_suppression_pct": 22.31279609909086,
+    "rydberg_blockade_constraint_preserved_pct": 100.0,
+    "unconstrained_blockade_violation_rate_pct": 38.5,
+    "eth_weak_breakdown_verified": true,
+    "execution_time_sec": 0.07528090476989746
+}

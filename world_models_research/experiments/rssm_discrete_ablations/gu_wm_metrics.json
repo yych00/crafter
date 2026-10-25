@@ -1,0 +1,35 @@
+{
+  "benchmark_steps": 600,
+  "cross_scale_span_orders_of_magnitude": 40,
+  "planck_minimal_length_l_min": 0.1,
+  "singularity_collapse_rate": {
+    "classical_standard_rssm": 0.0,
+    "decoupled_heuristic_model": 0.0,
+    "gu_wm_unified_engine": 0.0
+  },
+  "so3_gauge_orthogonality_residual": {
+    "classical_standard_rssm": 0.002233439257297713,
+    "decoupled_heuristic_model": 8.5615297273689e-16,
+    "gu_wm_unified_engine": 1.9921575258429177e-15
+  },
+  "vacuum_zero_point_energy": {
+    "classical_standard_rssm": 0.29463491917180157,
+    "decoupled_heuristic_model": 0.11566434404349848,
+    "gu_wm_unified_engine": 0.0
+  },
+  "lightcone_causality_violation_rate": {
+    "classical_standard_rssm": 0.0,
+    "decoupled_heuristic_model": 0.0,
+    "gu_wm_unified_engine": 0.0
+  },
+  "mean_ward_identity_residual": {
+    "classical_standard_rssm": 0.2775495340634884,
+    "decoupled_heuristic_model": 0.25,
+    "gu_wm_unified_engine": 7.667940356744414e-16
+  },
+  "global_lyapunov_energy_drift": {
+    "classical_standard_rssm": 1.0280401887280617,
+    "gu_wm_unified_engine": 0.18539543913530027
+  },
+  "theorem_46_verified": true
+}

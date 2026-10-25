@@ -1,0 +1,19 @@
+{
+    "laughlin_exponent_m": 3,
+    "filling_factor_nu": 0.3333333333333333,
+    "expected_fractional_charge": 0.3333333333333333,
+    "measured_fractional_charge": 0.3333333333333333,
+    "expected_anyonic_angle_rad": 1.0471975511965976,
+    "measured_anyonic_angle_rad": 1.0471975511965976,
+    "anyonic_statistical_angle_error": 0.0,
+    "ghost_overlap_rate_unconstrained_pct": 16.44875346260388,
+    "ghost_overlap_rate_mean_field_pct": 0.14127423822714683,
+    "ghost_overlap_rate_fqhe_pct": 0.0,
+    "min_pairwise_distance_fqhe": 1.1883724804594182,
+    "min_pairwise_distance_unconstrained": 0.008302965713305353,
+    "hall_plateau_drift_fqhe_pct": 0.0027555953886280247,
+    "hall_plateau_drift_mean_field_pct": 15.47086990951546,
+    "hall_plateau_fidelity_fqhe_pct": 99.99724440461137,
+    "vandermonde_nullification_verified": true,
+    "execution_time_sec": 0.7150392532348633
+}

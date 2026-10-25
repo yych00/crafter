@@ -1,0 +1,18 @@
+{
+    "sound_speed_c_s": 1.4142135623730951,
+    "healing_length_xi": 1.0,
+    "soliton_velocity_v0": 0.7071067811865476,
+    "expected_topological_phase_jump_rad": 2.0943951023931957,
+    "measured_topological_phase_jump_rad": 1.990442501867035,
+    "phase_jump_error_rad": 0.10395260052616062,
+    "collision_shape_fidelity_bec_soliton_pct": 99.36412789328878,
+    "collision_shape_fidelity_diffusive_pct": 96.41169409712168,
+    "collision_shape_fidelity_linear_pct": 86.19223690278866,
+    "radiation_energy_loss_rate_pct": 0.024811471055947228,
+    "analytical_interaction_shift_xi": 1.8624597189054244,
+    "measured_interaction_shift_xi": 0.9375,
+    "acoustic_horizon_escape_rate": 6.769642138141918e-16,
+    "unidirectional_causal_shielding_pct": 99.99999999999993,
+    "radiationless_elasticity_verified": true,
+    "execution_time_sec": 0.40843772888183594
+}

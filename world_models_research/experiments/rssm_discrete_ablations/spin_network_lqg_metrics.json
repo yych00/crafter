@@ -1,0 +1,16 @@
+{
+    "barbero_immirzi_parameter": 0.23753295796592,
+    "area_gap_delta": 5.170045537719107,
+    "critical_density_rho_crit": 0.4092034368840917,
+    "lqg_min_scale_factor_a_min": 1.878835995891808,
+    "lqg_max_density": 0.40920343688409166,
+    "density_critical_agreement_ratio": 0.9999999999999999,
+    "max_curvature_lqg": 10.284404089110055,
+    "max_curvature_classical_gr": 4.5238934211693005e+26,
+    "singularity_halting_factor": 4.398790033891763e+25,
+    "lqg_unitary_fidelity_pct": 100.0,
+    "classical_min_fidelity_pct": 0.0,
+    "mean_area_ladder_projection_error": 0.8780359369965025,
+    "singularity_fully_halted": true,
+    "execution_time_sec": 0.0024144649505615234
+}

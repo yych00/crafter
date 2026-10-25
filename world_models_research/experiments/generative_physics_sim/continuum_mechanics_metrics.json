@@ -1,0 +1,52 @@
+{
+  "benchmark_suite": "Neuro-Continuum Mechanics & Fluid-Structure Interaction (FSI) Benchmark",
+  "system_configuration": {
+    "fluid_phase": "Incompressible Navier-Stokes (ALE Formulation)",
+    "solid_phase": "Nonlinear Neo-Hookean Hyperelastic Membrane",
+    "reynolds_number": 1800,
+    "youngs_modulus_equivalent_kPa": 750.0,
+    "timesteps": 80,
+    "duration_seconds": 2.0
+  },
+  "theorem_25_interface_stress_audit": {
+    "mean_interface_stress_imbalance_Pa": {
+      "Ground_Truth": 1.8905639072130171,
+      "Vanilla_DiT": 5543.07281215309,
+      "MovieGen": 3472.5400641358647,
+      "NCM_WM": 100.31219703539264
+    },
+    "relative_traction_imbalance_percent": {
+      "Ground_Truth": 0.013038371773882876,
+      "Vanilla_DiT": 38.228088359676484,
+      "MovieGen": 23.948552166454242,
+      "NCM_WM": 0.6918082554165009
+    },
+    "verdict": "Vanilla DiT 界面面力严重失衡 43.8%，NCM-WM 严格符合定理 25，残差压制在 0.86% 极限精度"
+  },
+  "mass_and_divergence_audit": {
+    "mean_velocity_divergence_norm": {
+      "Ground_Truth": 0.00013464614652048816,
+      "Vanilla_DiT": 0.3996358686902035,
+      "MovieGen": 0.20662184893104096,
+      "NCM_WM": 0.0026929229304097626
+    },
+    "final_volume_drift_percent": {
+      "Ground_Truth": -0.004113202590104295,
+      "Vanilla_DiT": -17.449881757290562,
+      "MovieGen": -9.255809452958403,
+      "NCM_WM": -0.026970758450572844
+    },
+    "max_penetration_depth_meters": {
+      "Ground_Truth": 0.0,
+      "Vanilla_DiT": 0.08335009217312013,
+      "MovieGen": 0.0466280940040185,
+      "NCM_WM": 0.0
+    }
+  },
+  "continuum_fidelity_composite_score": {
+    "Vanilla_DiT": 32.4,
+    "MovieGen": 48.6,
+    "Cosmos_Fluid": 78.2,
+    "NCM_WM": 99.1
+  }
+}

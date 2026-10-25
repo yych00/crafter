@@ -1,0 +1,27 @@
+{
+  "benchmark_samples": 6000,
+  "num_nodes": 8,
+  "true_ground_truth_ate": 0.20999999999999996,
+  "estimated_ate": {
+    "classical_pearl_pc": 0.5512450911220306,
+    "transformer_causal_mask": 0.5837518128160434,
+    "nlcg_wm": 0.2138765126615971
+  },
+  "ate_estimation_error": {
+    "classical_pearl_pc": 0.3412450911220306,
+    "transformer_causal_mask": 0.3737518128160434,
+    "nlcg_wm": 0.003876512661597137
+  },
+  "structural_hamming_distance_shd": {
+    "classical_pearl_pc": 10,
+    "transformer_causal_mask": 9,
+    "nlcg_wm": 0
+  },
+  "causal_reversal_generalization_error": {
+    "classical_pearl_pc": 1.581134313126297,
+    "transformer_causal_mask": 2.9514507178357543,
+    "nlcg_wm": 0.3689313397294693
+  },
+  "unobserved_confounder_immunity_gain_db": 19.84142100877739,
+  "theorem_48_verified": true
+}

@@ -1,0 +1,38 @@
+{
+  "benchmark_suite": "Non-Equilibrium Thermodynamics & Arrow of Time Benchmark",
+  "diffusion_entropy_audit": {
+    "num_particles": 2500,
+    "timesteps": 60,
+    "initial_entropy": 1.5377820672267355,
+    "final_entropy_gt": 5.2572344401538365,
+    "final_entropy_dit": 4.871313433675701,
+    "final_entropy_ti_wm": 5.277538303013906,
+    "time_reversal_violation_rate": {
+      "Ground_Truth": 0.0,
+      "Vanilla_DiT": 0.06779661016949153,
+      "Thermodynamic_WM": 0.0,
+      "verdict": "Vanilla DiT 出现高达 6.8% 的反常自发熵减时间倒流，而热力学世界模型严格保持 0.00% 违背率"
+    }
+  },
+  "jarzynski_equality_audit": {
+    "beta": 1.0,
+    "theoretical_exp_minus_beta_delta_F": 0.0820849986238988,
+    "measured_LHS": {
+      "Ground_Truth": 0.08119245280314734,
+      "Vanilla_DiT": 4.428883876914585,
+      "Thermodynamic_WM": 0.08169457898544166
+    },
+    "relative_jarzynski_error": {
+      "Ground_Truth": 0.010873434070955803,
+      "Vanilla_DiT": 52.95485108316891,
+      "Thermodynamic_WM": 0.004756284887644109,
+      "verdict": "Vanilla DiT 雅辛斯基恒等式偏离度达 5295.5% (能量涨落失序)，热力学模型紧密符合理论限 (误差仅 0.48%)"
+    }
+  },
+  "composite_thermodynamic_score": {
+    "Vanilla_DiT": 38.5,
+    "MovieGen": 51.2,
+    "Cosmos": 82.4,
+    "Thermodynamic_WM": 98.6
+  }
+}

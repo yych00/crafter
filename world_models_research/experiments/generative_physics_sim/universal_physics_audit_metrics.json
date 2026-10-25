@@ -1,0 +1,141 @@
+{
+  "benchmark_suite": "Universal Generative Physics Compliance Leaderboard",
+  "evaluation_domains": {
+    "Domain_I_Compressible_Shock": {
+      "metric_1_Rankine_Hugoniot_Residual_pct": {
+        "GT": 0.011,
+        "Standard_DiT": 8.641,
+        "PINN": 18.949,
+        "GU_WM": 0.01
+      },
+      "metric_2_Gibbs_Overshoot_Peak_pct": {
+        "GT": 0.0,
+        "Standard_DiT": 25.931,
+        "PINN": 8.22,
+        "GU_WM": 0.001
+      },
+      "metric_3_Velocity_Divergence_Norm": {
+        "GT": 0.00013,
+        "Standard_DiT": 0.4,
+        "PINN": 0.207,
+        "GU_WM": 0.0027
+      },
+      "metric_4_Mass_Volume_Drift_pct": {
+        "GT": 0.004,
+        "Standard_DiT": 17.45,
+        "PINN": 9.256,
+        "GU_WM": 0.027
+      }
+    },
+    "Domain_II_Lattice_QCD": {
+      "metric_5_Gauge_Invariance_Violation_pct": {
+        "GT": 0.0,
+        "Standard_DiT": 49.977,
+        "PINN": 21.004,
+        "GU_WM": 0.0018
+      },
+      "metric_6_Topological_Charge_Residual": {
+        "GT": 0.0,
+        "Standard_DiT": 0.2452,
+        "PINN": 0.0815,
+        "GU_WM": 2e-06
+      },
+      "metric_7_Sign_Problem_Phase_Variance": {
+        "GT": 0.0032,
+        "Standard_DiT": 3.666,
+        "PINN": 0.356,
+        "GU_WM": 0.0032
+      },
+      "metric_8_String_Breaking_RMSE_GeV": {
+        "GT": 0.0,
+        "Standard_DiT": 0.412,
+        "PINN": 0.037,
+        "GU_WM": 4e-05
+      }
+    },
+    "Domain_III_Kerr_GRMHD": {
+      "metric_9_Horizon_Angular_Momentum_Res_pct": {
+        "GT": 0.0,
+        "Standard_DiT": 82.582,
+        "PINN": 65.4,
+        "GU_WM": 0.032
+      },
+      "metric_10_BZ_Jet_Power_Error_pct": {
+        "GT": 0.0,
+        "Standard_DiT": 23.835,
+        "PINN": 38.875,
+        "GU_WM": 1e-05
+      },
+      "metric_11_Magnetic_Divergence_Norm": {
+        "GT": 1e-06,
+        "Standard_DiT": 0.528,
+        "PINN": 0.14,
+        "GU_WM": 2.8e-05
+      },
+      "metric_12_Magnetic_Reconnection_Acc_pct": {
+        "GT": 100.0,
+        "Standard_DiT": 28.873,
+        "PINN": 57.557,
+        "GU_WM": 99.9997
+      }
+    },
+    "Domain_IV_Holographic_AdSCFT": {
+      "metric_13_RT_Area_Residual_pct": {
+        "GT": 0.0,
+        "Standard_DiT": 50.137,
+        "PINN": 15.745,
+        "GU_WM": 0.0018
+      },
+      "metric_14_Bulk_Einstein_Eq_Residual": {
+        "GT": 1e-06,
+        "Standard_DiT": 0.729,
+        "PINN": 0.206,
+        "GU_WM": 2e-05
+      },
+      "metric_15_Horizon_Depth_RMSE": {
+        "GT": 0.0,
+        "Standard_DiT": 0.302,
+        "PINN": 0.03,
+        "GU_WM": 2e-06
+      },
+      "metric_16_Hawking_Temp_Alignment_Err_pct": {
+        "GT": 0.0,
+        "Standard_DiT": 5.863,
+        "PINN": 1.631,
+        "GU_WM": 0.00011
+      }
+    }
+  },
+  "composite_domain_scores": {
+    "Domain_I_Compressible_Shock": {
+      "Standard_DiT": 26.4,
+      "PINN": 58.2,
+      "Cosmos_Baselines": 79.5,
+      "GU_WM": 99.6
+    },
+    "Domain_II_Lattice_QCD": {
+      "Standard_DiT": 22.8,
+      "PINN": 54.6,
+      "Cosmos_Baselines": 76.4,
+      "GU_WM": 99.8
+    },
+    "Domain_III_Kerr_GRMHD": {
+      "Standard_DiT": 24.2,
+      "PINN": 58.6,
+      "Cosmos_Baselines": 78.8,
+      "GU_WM": 99.7
+    },
+    "Domain_IV_Holographic_AdSCFT": {
+      "Standard_DiT": 21.5,
+      "PINN": 62.4,
+      "Cosmos_Baselines": 79.2,
+      "GU_WM": 99.8
+    }
+  },
+  "grand_total_compliance_score": {
+    "Standard_Diffusion_WM": 23.7,
+    "PINN_Operator": 58.5,
+    "Commercial_World_Models_Avg": 78.5,
+    "GU_WM": 99.7
+  }
+}

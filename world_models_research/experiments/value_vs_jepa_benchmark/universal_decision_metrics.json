@@ -1,0 +1,140 @@
+{
+  "DreamerV3 (RSSM)": {
+    "wall_clock_plan_ms": 2.62,
+    "throughput_fps": 381.6,
+    "final_10k_cumulative_reward": 1171.31,
+    "checkpoint_rewards": {
+      "1000": 32.26,
+      "2500": 169.13,
+      "5000": 550.08,
+      "7500": 904.17,
+      "10000": 1171.31
+    },
+    "sample_efficiency_auc": 0.5462,
+    "multi_step_drift_mse": {
+      "H_1": 0.4566,
+      "H_5": 0.576,
+      "H_10": 0.6004,
+      "H_20": 0.6826,
+      "H_50": 0.6767,
+      "H_100": 0.6012
+    },
+    "noise_robustness_retention": 1.0,
+    "pareto_optimality_score": 0.1791
+  },
+  "MuZero (Value-Equivalent)": {
+    "wall_clock_plan_ms": 3.388,
+    "throughput_fps": 295.1,
+    "final_10k_cumulative_reward": 1140.53,
+    "checkpoint_rewards": {
+      "1000": 144.41,
+      "2500": 322.07,
+      "5000": 611.08,
+      "7500": 869.32,
+      "10000": 1140.53
+    },
+    "sample_efficiency_auc": 0.5879,
+    "multi_step_drift_mse": {
+      "H_1": 0.4271,
+      "H_5": 0.4337,
+      "H_10": 0.4365,
+      "H_20": 0.4354,
+      "H_50": 0.4436,
+      "H_100": 0.4455
+    },
+    "noise_robustness_retention": 0.9944,
+    "pareto_optimality_score": 0.1554
+  },
+  "V-JEPA (Joint-Embedding)": {
+    "wall_clock_plan_ms": 0.614,
+    "throughput_fps": 1628.8,
+    "final_10k_cumulative_reward": 757.85,
+    "checkpoint_rewards": {
+      "1000": 63.87,
+      "2500": 185.62,
+      "5000": 402.32,
+      "7500": 575.18,
+      "10000": 757.85
+    },
+    "sample_efficiency_auc": 0.381,
+    "multi_step_drift_mse": {
+      "H_1": 0.374,
+      "H_5": 0.3825,
+      "H_10": 0.3702,
+      "H_20": 0.3136,
+      "H_50": 2.0552,
+      "H_100": 21.166
+    },
+    "noise_robustness_retention": 1.0,
+    "pareto_optimality_score": 0.2977
+  },
+  "Diffusion-WM (Diffuser)": {
+    "wall_clock_plan_ms": 1.025,
+    "throughput_fps": 975.3,
+    "final_10k_cumulative_reward": 779.94,
+    "checkpoint_rewards": {
+      "1000": 55.17,
+      "2500": 127.86,
+      "5000": 391.6,
+      "7500": 556.31,
+      "10000": 779.94
+    },
+    "sample_efficiency_auc": 0.3642,
+    "multi_step_drift_mse": {
+      "H_1": 0.4268,
+      "H_5": 1.0274,
+      "H_10": 5.5271,
+      "H_20": 41.4269,
+      "H_50": 378.7057,
+      "H_100": 1412.0662
+    },
+    "noise_robustness_retention": 0.7263,
+    "pareto_optimality_score": 0.2337
+  },
+  "SFB-JEPA (Symplectic Bundle)": {
+    "wall_clock_plan_ms": 1.114,
+    "throughput_fps": 897.9,
+    "final_10k_cumulative_reward": 4270.11,
+    "checkpoint_rewards": {
+      "1000": 73.28,
+      "2500": 270.52,
+      "5000": 1566.54,
+      "7500": 2931.99,
+      "10000": 4270.11
+    },
+    "sample_efficiency_auc": 1.718,
+    "multi_step_drift_mse": {
+      "H_1": 0.181,
+      "H_5": 0.1818,
+      "H_10": 0.1851,
+      "H_20": 0.1962,
+      "H_50": 0.3368,
+      "H_100": 0.5085
+    },
+    "noise_robustness_retention": 0.7763,
+    "pareto_optimality_score": 0.5246
+  },
+  "Universal-WM (Unified)": {
+    "wall_clock_plan_ms": 1.447,
+    "throughput_fps": 690.9,
+    "final_10k_cumulative_reward": 8553.47,
+    "checkpoint_rewards": {
+      "1000": 29.88,
+      "2500": 76.06,
+      "5000": 815.02,
+      "7500": 3942.86,
+      "10000": 8553.47
+    },
+    "sample_efficiency_auc": 2.2761,
+    "multi_step_drift_mse": {
+      "H_1": 0.1871,
+      "H_5": 0.1866,
+      "H_10": 0.186,
+      "H_20": 0.1852,
+      "H_50": 0.3005,
+      "H_100": 0.446
+    },
+    "noise_robustness_retention": 0.109,
+    "pareto_optimality_score": 0.6513
+  }
+}

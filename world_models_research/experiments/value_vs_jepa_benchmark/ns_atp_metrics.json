@@ -1,0 +1,26 @@
+{
+  "Theoretical_Theorem": "Theorem 56 (Continuous Differential Homomorphism of FOL & Herbrand Termination)",
+  "Benchmark_Summary": {
+    "Discrete-DPLL Solver": {
+      "proof_success_rate": 63.33,
+      "avg_latency_ms": 12.098,
+      "throughput_proofs_per_sec": 82.7,
+      "formal_soundness_rate": 100.0,
+      "avg_termination_steps": 258.8
+    },
+    "Pure-LLM Generator": {
+      "proof_success_rate": 60.0,
+      "avg_latency_ms": 7.922,
+      "throughput_proofs_per_sec": 126.2,
+      "formal_soundness_rate": 36.67,
+      "avg_termination_steps": 10.1
+    },
+    "NS-ATP-WM (Continuous FOL)": {
+      "proof_success_rate": 76.67,
+      "avg_latency_ms": 42.034,
+      "throughput_proofs_per_sec": 23.8,
+      "formal_soundness_rate": 100.0,
+      "avg_termination_steps": 30.8
+    }
+  }
+}
