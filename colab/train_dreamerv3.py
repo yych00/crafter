@@ -270,8 +270,31 @@ def main():
     repo_dir = Path(args.repo_dir)
     outdir.mkdir(parents=True, exist_ok=True)
 
-    log_header("Crafter DreamerV3 100k 训练启动")
-    print(f"目标步数 (Steps):      {args.steps:,}")
+    # 检查是否存在历史进度 (断点续训检测)
+    current_step = 0
+    metrics_file = outdir / "metrics.jsonl"
+    if metrics_file.exists():
+        try:
+            with open(metrics_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        record = json.loads(line)
+                        current_step = int(record.get("step", current_step))
+        except Exception:
+            pass
+
+    if current_step > 0:
+        print(f"\n[断点续训] 检测到已有历史检查点: {current_step:,} steps")
+        if args.steps <= current_step:
+            new_target = current_step + 100000
+            print(f"[警告] 设定步数 ({args.steps:,}) <= 当前已完成步数 ({current_step:,})！")
+            print(f"[自动递增] 目标总步数已自动调整为: {new_target:,} steps")
+            args.steps = new_target
+        print(f"[断点续训] 本次预计增量训练: {args.steps - current_step:,} 步 (至总步数 {args.steps:,})\n")
+
+    log_header("Crafter DreamerV3 训练启动")
+    print(f"目标总步数 (Steps):    {args.steps:,}")
     print(f"网络规模 (Model Size): {args.size}")
     print(f"训练比率 (Train Ratio):{args.train_ratio}")
     print(f"输出目录 (OutDir):     {outdir}")

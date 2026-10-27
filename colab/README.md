@@ -36,16 +36,18 @@ python colab/run_on_colab.py --gpu A100 --steps 100000 --size size12m
 
 ---
 
-### 方式二：通过 Google Colab 网页端运行 (直观交互)
+### 方式二：通过 Google Colab 网页端运行与断点续训 (推荐)
 
 1. 打开 [Google Colab](https://colab.research.google.com/)。
 2. 点击 **文件 (File)** -> **上传笔记本 (Upload notebook)**，选择本地的 [`train_crafter_dreamerv3_100k.ipynb`](file:///e:/code/Crafter/colab/train_crafter_dreamerv3_100k.ipynb)。
-3. 在顶部菜单检查运行时：**代码执行程序 (Runtime)** -> **更改运行时类型 (Change runtime type)** -> 硬件加速器选择 **T4 GPU**（Colab 免费提供）。
-4. 依次执行各个单元格：
-   - **Cell 1~4**：检测 GPU、可选挂载 Google Drive、自动拉取官方源码和安装依赖；
-   - **Cell 5**：启动 100k 步训练（在 T4 上约需 15~25 分钟，A100 约 5~8 分钟）；
-   - **Cell 6**：训练完成后自动绘制 **Crafter Score 学习曲线** 与 **22 项生存成就解锁概率直方图**；
-   - **Cell 7**：将训练生成的 checkpoint 权重、metrics 日志自动压缩打包为 `.zip` 并触发浏览器下载。
+3. 检查运行时：**代码执行程序 (Runtime)** -> **更改运行时类型 (Change runtime type)** -> 硬件加速器选择 **T4 GPU**。
+4. **支持两种模式**：
+   - **模式 A：从零全新训练 (100k 步)**：依次执行各个单元格，默认将完成 100,000 步训练，并在训练完成后自动将成果同步至你的 Google Drive 根目录的 `crafter_dreamerv3_100k` 文件夹。
+   - **模式 B：从 Google Drive 继续训练 (Resume Training，如增训至 200k 步)**：
+     1. 运行 **Cell 2 (挂载 Google Drive 与恢复检查点)**：脚本会自动识别 Google 云端硬盘中的 [`crafter_dreamerv3_100k`](https://drive.google.com/drive/folders/1e9HPKs4uWtNjp2FiKyucV9CNe-egakLl) 历史存档，并自动恢复至 Colab 本地高速 SSD。
+     2. 运行 **Cell 5 (启动训练)**：在参数配置中设置 `TARGET_STEPS = 200000`（或更高），DreamerV3 将自动加载历史权重、优化器与经验回放数据，无缝增量训练至目标总步数。
+     3. 训练结束或手动终止时，脚本会自动将最新权重与 `metrics.jsonl` 回写备份到 Google Drive。
+   - **后续单元格**：运行可视化单元格，动态绘制累计步数的平均得分、生存时长与 22 项成就解锁率柱状图，并打包下载最新产物。
 
 ---
 
