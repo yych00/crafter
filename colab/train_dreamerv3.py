@@ -167,6 +167,14 @@ except Exception as e:
                 "shard_fn = jax.jit(lambda x: x, (mirrored,), original).lower(inspec)",
                 "shard_fn = jax.jit(lambda x: x, in_shardings=(mirrored,), out_shardings=original).lower(inspec)",
             ),
+            (
+                "'--xla_gpu_enable_triton_softmax_fusion=false',",
+                "# '--xla_gpu_enable_triton_softmax_fusion=false',",
+            ),
+            (
+                "'--xla_gpu_graph_level=0',",
+                "# '--xla_gpu_graph_level=0',",
+            ),
         ]
         modified = False
         for old, new in replacements:
@@ -341,6 +349,7 @@ def main():
     start_time = time.time()
     env = os.environ.copy()
     env["PYTHONPATH"] = str(repo_dir) + os.pathsep + env.get("PYTHONPATH", "")
+    env.pop("XLA_FLAGS", None)
 
     process = subprocess.Popen(
         cmd,

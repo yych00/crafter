@@ -11,3 +11,5 @@ output/
 scratch/
 experiments/
 .agents/
+colab/dreamerv3/
+dreamerv3/
